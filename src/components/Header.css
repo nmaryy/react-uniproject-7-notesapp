@@ -1,0 +1,162 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 14rem;
+    background: rgb(204, 214, 254, 0.6);
+    position: fixed;
+    font-size: 12px;
+    padding: 2rem 0 1rem 0;
+    height: 100%;
+
+}
+
+.header--top {
+    height: 4rem;
+    width: 8rem;
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.header--top img {
+    height: 4rem;
+    width: 4rem;
+}
+
+.header--middle {
+    margin-top: 1rem;
+}
+
+
+.header--middle--acc {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.header--middle--acc img {
+    height: 3rem;
+    width: 3rem;
+}
+
+.header--middle--acc div {
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+
+
+.header--middle--add {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header--middle--add span {
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+
+.header--btm {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+
+
+
+
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+
+.order--plus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translateX(-2rem);
+}
+
+.header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    margin-top: 5px;
+    width: 6rem;
+    height: 1.2rem;
+    border-radius: 2px;
+    margin-right: 5px;
+
+}
+
+.header button:hover {
+    background-color: #A5B4FC;
+    color: #EEF2FF;
+}
+
+
+
+.header--middle--add .add-btn {
+    background-color: #EEF2FF;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 20px;
+    border: 2px solid #EEF2FF;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header--middle--add .add-btn:hover {
+    background-color: #A5B4FC;
+    color: #EEF2FF;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 20px;
+}
+
+.order--plus button {
+    background-color: transparent;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+
+.header--desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    margin: 3rem 2rem 3rem 2rem;
+}
+
+
+.header--desc p {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}

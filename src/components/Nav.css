@@ -1,0 +1,86 @@
+.nav {
+    height: 3rem;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 4rem;
+    margin: 0.5rem 3.5rem 0 14rem;
+}
+
+.nav--search input {
+    width: 12rem;
+    height: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid #A5B4FC;
+    background-color: #EEF2FF;
+    padding: 2px 5px;
+    font-size: 10px;
+    margin-left: 2.8rem;
+    outline: none;
+    margin-right: 2rem;
+}
+
+
+.nav--icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav--brg {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: #A5B4FC 2px solid;
+    border-radius: 5px;
+    background-color: #EEF2FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.nav--brg div {
+    width: 0.8rem;
+    height: 1px;
+    background-color: #A5B4FC;
+}
+
+.nav--mode {
+    width: 2rem;
+    height: 1.2rem;
+    border: 2px solid #A5B4FC;
+    border-radius: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1px;
+    background-color: #EEF2FF;
+    cursor: pointer;
+}
+
+.nav--mode input {
+    opacity: 0;
+}
+
+.nav--mode--check {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #A5B4FC;
+    background-repeat: round;
+    border-radius: 20px;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+
+.nav li {
+    margin: 0 10px;
+    list-style: none;
+}
