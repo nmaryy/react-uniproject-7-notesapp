@@ -4,7 +4,7 @@
     justify-content: space-around;
     align-items: center;
     width: 14rem;
-    background: rgb(204, 214, 254, 0.6);
+    /* background: rgb(204, 214, 254, 0.6); */
     position: fixed;
     font-size: 12px;
     padding: 2rem 0 1rem 0;
@@ -23,8 +23,9 @@
 }
 
 .header--top img {
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 6rem;
+    object-fit: contain;
 }
 
 .header--middle {

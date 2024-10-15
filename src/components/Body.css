@@ -3,7 +3,7 @@
 
 .body {
     display: flex;
-    background: linear-gradient(90deg, rgba(238, 242, 255, 1) 0%, rgba(190, 202, 248, 1) 40%, rgba(165, 180, 252, 1) 100%);
+    /* background: linear-gradient(90deg, rgba(238, 242, 255, 1) 0%, rgba(190, 202, 248, 1) 40%, rgba(165, 180, 252, 1) 100%); */
     width: 100%;
     padding: 2rem 4rem;
     display: flex;
@@ -83,6 +83,7 @@
     height: 15rem;
     padding: 1rem;
     border-radius: 5px;
+    text-overflow: ellipsis;
 
 }
 
@@ -104,6 +105,9 @@
     width: 2rem;
     height: 2rem;
     background-color: #EEF2FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .body--item button:hover {
@@ -116,6 +120,7 @@
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
+
     transform: translateX(-2rem) translateY(-3rem);
 }
 
@@ -129,7 +134,7 @@
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
-    transform: translateX(6rem) translateY(-3rem);
+    transform: translateX(8rem) translateY(-5rem);
 }
 
 .btn--del:hover {
@@ -142,7 +147,7 @@
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
-    transform: translateX(2.5rem) translateY(-1.5rem);
+    transform: translateX(3rem) translateY(-3.5rem);
 }
 
 .btn--edit:hover {
@@ -154,14 +159,22 @@
     padding: 0;
     list-style: none;
     line-height: 20px;
-    transform: translateY(-1.2rem);
+    transform: translateY(-3.5rem);
 }
 
-.body--item:not(:last-of-type) {
+.body--item {
     margin-inline: 0 4rem;
 }
 
-.body--cap {
-    width: 24.6rem;
-    background-color: aqua;
+
+@media (max-width:780px) {
+    .body--items {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 3rem;
+        margin-left: 2rem;
+    }
+
+    .body--list {
+        margin-left: 10rem;
+    }
 }

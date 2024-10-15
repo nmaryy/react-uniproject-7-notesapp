@@ -1,0 +1,8 @@
+.backdrop {
+    width: 100%;
+    background-color: rgb(232, 232, 232);
+    opacity: 0.6;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+}

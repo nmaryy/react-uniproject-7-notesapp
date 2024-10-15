@@ -1,0 +1,44 @@
+.navigation {
+    width: 10rem;
+    height: 13.5rem;
+    background-color: #E0E7FF;
+    position: absolute;
+    z-index: 100;
+    top: 3.9rem;
+    right: 12.6rem;
+    border-radius: 5px;
+}
+
+
+.navigation ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.navigation li {
+    margin: 0;
+    cursor: pointer;
+    width: 10rem;
+    padding: 0.8rem 0.8rem 1rem 0.8rem;
+
+}
+
+.navigation li:not(:last-of-type) {
+    border-bottom: 1px solid #A5B4FC;
+    padding: 0.8rem
+}
+
+.navigation li:hover {
+    color: #fff;
+}
+
+@media (max-width:780px) {
+    .navigation {
+        right: 7.9rem;
+    }
+
+}

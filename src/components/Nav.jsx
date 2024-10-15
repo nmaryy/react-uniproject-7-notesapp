@@ -1,22 +1,38 @@
+import { useState } from 'react'
 import './Nav.css'
+import Navigation from './Navigation'
 const Nav = () => {
+    const [isChecked, setIsChecked] = useState(false)
+    const [navigationShown, setNavigationShown] = useState(false)
     let ds = 'icon'
-    function brgHandler() {
-        console.log('brgd')
+    // let style = { isChecked &&transform: 'translateX(0.8rem)' }
+
+
+    function modeHandler() {
+        setIsChecked(!isChecked)
+    }
+    function brgHandlerShow() {
+        setNavigationShown(true)
+    }
+    function brgHandlerHide() {
+        setNavigationShown((prevnav) => {
+            return !prevnav
+        })
     }
     return (
         <div className='nav'>
+            {navigationShown && <Navigation onMouseLeave={brgHandlerHide} />}
             <div className='nav--search'>
                 <input type='text' placeholder={`${ds} Search here`} />
             </div>
             <div className='nav--icons'>
                 <div className='nav--mode'>
-                    <div className='nav--mode--check'>
+                    <div className={isChecked ? 'move' : 'nav--mode--check'}>
 
-                        <input type='checkbox' />
+                        <input className={isChecked ? 'move--inp' : 'nav--mode--input '} type='checkbox' checked={isChecked} onChange={modeHandler} />
                     </div>
                 </div>
-                <div className='nav--brg' onMouseEnter={brgHandler}>
+                <div className='nav--brg' onMouseEnter={brgHandlerShow}  >
                     <div></div>
                     <div></div>
                     <div></div>

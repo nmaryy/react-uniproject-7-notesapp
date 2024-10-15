@@ -1,11 +1,23 @@
+import { useState } from 'react'
 import Footer from './Footer'
 import './Header.css'
 const Header = (props) => {
+    const [listOpen, setListOpen] = useState(true)
+    function listOpenHandler(event) {
+        setListOpen((btnId) => {
+            if (btnId = event.target.id) {
+                console.log(event.target.value)
+                return !listOpen
+
+            }
+        })
+    }
+
     return (
         <div className='header'>
             <div className='header--top'>
                 <span>
-                    <img src='image.png' />
+                    <img src='logolight.png' />
 
                 </span>
                 <span>Notes App</span>
@@ -17,7 +29,7 @@ const Header = (props) => {
                         <div>Maryam's Notes</div>
                     </div>
                     <div className='header--middle--add'>
-                        <button className='add-btn'>
+                        <button className='add-btn' onClick={props.onEdit}>
                             +
                         </button>
                         <span>Add a new note</span>
@@ -27,8 +39,8 @@ const Header = (props) => {
                             <div className='order--plus'>
 
                                 <span>
-                                    <button className='add-btn'>
-                                        +
+                                    <button className='add-btn' id='recent' onClick={listOpenHandler}>
+                                        {listOpen ? '+' : '-'}
                                     </button>
                                 </span>
                                 <span>
@@ -44,8 +56,8 @@ const Header = (props) => {
 
                                 <span>
 
-                                    <button className='add-btn'>
-                                        +
+                                    <button className='add-btn' id='drafts' onClick={listOpenHandler}>
+                                        {listOpen ? '+' : '-'}
                                     </button>
                                 </span>
                                 <span>
@@ -59,8 +71,8 @@ const Header = (props) => {
                         <div className='order'>
                             <div className='order--plus'>
                                 <span>
-                                    <button className='add-btn'>
-                                        +
+                                    <button className='add-btn' id='done' onClick={listOpenHandler}>
+                                        {listOpen ? '+' : '-'}
                                     </button>
                                 </span>
                                 <span>
@@ -76,8 +88,8 @@ const Header = (props) => {
                         <div className='order'>
                             <div className='order--plus'>
                                 <span>
-                                    <button className='add-btn'>
-                                        +
+                                    <button className='add-btn' id='trash' onClick={listOpenHandler}>
+                                        {listOpen ? '+' : '-'}
                                     </button>
                                 </span>
                                 <span>

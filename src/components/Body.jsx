@@ -1,4 +1,5 @@
 import './Body.css'
+import Edit from './Edit'
 import Nav from './Nav'
 
 const Body = (props) => {
@@ -20,6 +21,7 @@ const Body = (props) => {
 
     return (
         <div className='body'>
+            {props.editShown && <Edit />}
             <Nav />
             {props.arr.length === 0 ? card :
                 <div className='body--list'>
@@ -30,7 +32,6 @@ const Body = (props) => {
                     </div>
 
                     <div className='body--items'>
-                        {/* <div className='grid grid-cols-4 gap-4'> */}
                         <div className='body--item'>
                             <div className='body--item--head'>
                                 <h4>Note</h4>
@@ -49,7 +50,7 @@ const Body = (props) => {
                                 <li>dsd</li>
                                 <li>dsd</li>
                             </ul>
-                            <button className='btn--edit'>Edit</button>
+                            <button className='btn--edit' onClick={props.onEdit}>Edit</button>
                         </div>
                         <div className='body--item'>
                             <div className='body--item--head'>
@@ -69,7 +70,7 @@ const Body = (props) => {
                                 <li>dsd</li>
                                 <li>dsd</li>
                             </ul>
-                            <button className='btn--edit'>Edit</button>
+                            <button className='btn--edit' >Edit</button>
                         </div>
                         <div className='body--item'>
                             <div className='body--item--head'>
@@ -315,7 +316,6 @@ const Body = (props) => {
 
                 </div>
             }
-            {/* <div className='body--cap'></div> */}
         </div>
     )
 }
