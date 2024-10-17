@@ -1,36 +1,71 @@
 import { useState } from 'react'
 import Footer from './Footer'
+import { MdAdd } from "react-icons/md";
+import { MdOutlineRemove } from "react-icons/md";
+import { MdFileDownloadDone } from "react-icons/md";
+import { RiDeleteBin2Line } from "react-icons/ri";
+
+
 import './Header.css'
 const Header = (props) => {
-    const [listOpen, setListOpen] = useState(true)
-    function listOpenHandler(event) {
-        setListOpen((btnId) => {
-            if (btnId = event.target.id) {
-                console.log(event.target.value)
-                return !listOpen
+    const [listOpen, setListOpen] = useState({
+        recent: false,
+        drafts: false,
+        done: false,
+        trash: false
+    })
 
+    function recentOpenHandler(event) {
+        setListOpen((prevstate) => {
+            return {
+                ...prevstate,
+                recent: !listOpen.recent
+            }
+        })
+    }
+    function draftsOpenHandler(event) {
+        setListOpen((prevstate) => {
+            return {
+                ...prevstate,
+                drafts: !listOpen.drafts
+            }
+        })
+    }
+    function doneOpenHandler(event) {
+        setListOpen((prevstate) => {
+            return {
+                ...prevstate,
+                done: !listOpen.done
+            }
+        })
+    }
+    function trashOpenHandler(event) {
+        setListOpen((prevstate) => {
+            return {
+                ...prevstate,
+                trash: !listOpen.trash
             }
         })
     }
 
     return (
-        <div className='header'>
+        <div className='header '>
             <div className='header--top'>
                 <span>
-                    <img src='logolight.png' />
+                    <img src={props.appMode ? 'bannerlight.svg' : 'bannerdark.svg'} />
 
                 </span>
-                <span>Notes App</span>
             </div>
             {props.auth ?
                 <div className='header--middle'>
                     <div className='header--middle--acc'>
-                        <img src='image.png' />
+                        {props.appMode ? <img src='avatarlight.png' /> : <img src='avatardark.png' />}
+
                         <div>Maryam's Notes</div>
                     </div>
                     <div className='header--middle--add'>
                         <button className='add-btn' onClick={props.onEdit}>
-                            +
+                            <MdAdd />
                         </button>
                         <span>Add a new note</span>
                     </div>
@@ -39,16 +74,31 @@ const Header = (props) => {
                             <div className='order--plus'>
 
                                 <span>
-                                    <button className='add-btn' id='recent' onClick={listOpenHandler}>
-                                        {listOpen ? '+' : '-'}
+                                    <button className='add-btn' id='recent' onClick={recentOpenHandler}>
+                                        {!listOpen.recent ? <MdAdd /> : <MdOutlineRemove />
+                                        }
                                     </button>
                                 </span>
                                 <span>
                                     Recent
                                 </span>
                             </div>
-                            <button>Recent</button>
-                            <button>Recent</button>
+                            {listOpen.recent && <>
+                                <button>Recent
+                                    <span>
+
+                                        <i>
+                                            <RiDeleteBin2Line />
+                                        </i>
+                                        <i>
+                                            <MdFileDownloadDone />
+                                        </i>
+                                    </span>
+                                </button>
+                                <button>Recent</button>
+                            </>
+                            }
+
                         </div>
 
                         <div className='order'>
@@ -56,49 +106,61 @@ const Header = (props) => {
 
                                 <span>
 
-                                    <button className='add-btn' id='drafts' onClick={listOpenHandler}>
-                                        {listOpen ? '+' : '-'}
+                                    <button className='add-btn' id='drafts' onClick={draftsOpenHandler}>
+                                        {!listOpen.drafts ? <MdAdd />
+                                            : <MdOutlineRemove />
+                                        }
                                     </button>
                                 </span>
                                 <span>
                                     Drafts
                                 </span>
                             </div>
-                            <button>Recent</button>
-                            <button>Recent</button>
-                            <button>Recent</button>
+                            {listOpen.drafts && <>
+                                <button>Recent</button>
+                                <button>Recent</button>
+                                <button>Recent</button>
+                            </>}
                         </div>
                         <div className='order'>
                             <div className='order--plus'>
                                 <span>
-                                    <button className='add-btn' id='done' onClick={listOpenHandler}>
-                                        {listOpen ? '+' : '-'}
+                                    <button className='add-btn' id='done' onClick={doneOpenHandler}>
+                                        {!listOpen.done ? <MdAdd />
+                                            : <MdOutlineRemove />
+                                        }
                                     </button>
                                 </span>
                                 <span>
                                     Done
                                 </span>
                             </div>
-                            <button>Recent</button>
-                            <button>Recent</button>
-                            <button>Recent</button>
-                            <button>Recent</button>
-                            <button>Recent</button>
+                            {listOpen.done && <>
+                                <button>Recent</button>
+                                <button>Recent</button>
+                                <button>Recent</button>
+                                <button>Recent</button>
+                                <button>Recent</button>
+                            </>}
                         </div>
                         <div className='order'>
                             <div className='order--plus'>
                                 <span>
-                                    <button className='add-btn' id='trash' onClick={listOpenHandler}>
-                                        {listOpen ? '+' : '-'}
+                                    <button className='add-btn' id='trash' onClick={trashOpenHandler}>
+                                        {!listOpen.trash ? <MdAdd />
+                                            : <MdOutlineRemove />
+                                        }
                                     </button>
                                 </span>
                                 <span>
                                     Trash
                                 </span>
                             </div>
-                            <button>Recent</button>
-                            <button>Recent</button>
-                            <button>Recent</button>
+                            {listOpen.trash && <>
+                                <button>Recent</button>
+                                <button>Recent</button>
+                                <button>Recent</button>
+                            </>}
                         </div>
 
 

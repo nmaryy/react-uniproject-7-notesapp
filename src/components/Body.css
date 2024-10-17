@@ -1,9 +1,5 @@
-/* @tailwind Flexbox & Grid; */
-
-
 .body {
     display: flex;
-    /* background: linear-gradient(90deg, rgba(238, 242, 255, 1) 0%, rgba(190, 202, 248, 1) 40%, rgba(165, 180, 252, 1) 100%); */
     width: 100%;
     padding: 2rem 4rem;
     display: flex;
@@ -31,9 +27,9 @@
 }
 
 
-
 .acc-btns {
-    background-color: #EEF2FF;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     border: none;
     cursor: pointer;
     font-size: 10px;
@@ -42,11 +38,12 @@
     height: 1.5rem;
     border-radius: 2px;
     margin-right: 5px;
+    box-shadow: 1px 1px 10px var(--color-secondary);
 }
 
 .acc-btns:hover {
-    background-color: #A5B4FC;
-    color: #EEF2FF;
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 
@@ -78,7 +75,7 @@
 }
 
 .body--item {
-    background-color: #EEF2FF;
+    background-color: var(--color-accent);
     width: 10rem;
     height: 15rem;
     padding: 1rem;
@@ -104,42 +101,17 @@
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
-    background-color: #EEF2FF;
+    background-color: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 
-.body--item button:hover {
-    color: #fff;
+.body--item i {
+    font-size: 0.8rem;
 }
 
-.btn--done {
-    font-size: 10px;
-    border: none;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-
-    transform: translateX(-2rem) translateY(-3rem);
-}
-
-.btn--done:hover {
-    background-color: rgb(155, 200, 185);
-}
-
-.btn--del {
-    font-size: 10px;
-    border: none;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    transform: translateX(8rem) translateY(-5rem);
-}
-
-.btn--del:hover {
-    background-color: rgb(243, 66, 13);
-}
 
 .btn--edit {
     font-size: 10px;
@@ -147,11 +119,12 @@
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
-    transform: translateX(3rem) translateY(-3.5rem);
+    transform: translateX(3rem) translateY(0.5rem);
 }
 
 .btn--edit:hover {
-    background-color: #A5B4FC;
+    background-color: var(--color-accent);
+    color: #000;
 }
 
 
@@ -159,7 +132,6 @@
     padding: 0;
     list-style: none;
     line-height: 20px;
-    transform: translateY(-3.5rem);
 }
 
 .body--item {
@@ -167,14 +139,52 @@
 }
 
 
-@media (max-width:780px) {
+
+@media (max-width:1285px) {
+    .body--items {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 3rem;
+        margin-left: 10rem;
+    }
+}
+
+@media (max-width:1165px) {
+    .body--items {
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width:1050px) {
+    .body--items {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width:1020px) {
     .body--items {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 3rem;
+        row-gap: 2rem;
         margin-left: 2rem;
+    }
+}
+
+@media (max-width:850px) {
+    .body--items {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin-left: 6rem;
+    }
+}
+
+
+@media (max-width:700px) {
+
+
+    .body--items {
+        margin-left: 4rem;
     }
 
     .body--list {
         margin-left: 10rem;
+        font-size: 10px;
     }
 }

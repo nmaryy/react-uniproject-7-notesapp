@@ -1,10 +1,12 @@
 .navigation {
     width: 10rem;
-    height: 13.5rem;
-    background-color: #E0E7FF;
+    height: 14rem;
+    background-color: var(--color-primary);
+    box-shadow: 1px 1px 5px var(--color-secondary);
+    color: var(--color-secondary);
     position: absolute;
     z-index: 100;
-    top: 3.9rem;
+    top: 3.6rem;
     right: 12.6rem;
     border-radius: 5px;
 }
@@ -15,7 +17,6 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
 
@@ -23,22 +24,55 @@
     margin: 0;
     cursor: pointer;
     width: 10rem;
-    padding: 0.8rem 0.8rem 1rem 0.8rem;
+    padding: 0.8rem;
 
 }
 
 .navigation li:not(:last-of-type) {
-    border-bottom: 1px solid #A5B4FC;
-    padding: 0.8rem
+    border-bottom: 1px solid var(--color-secondary);
 }
 
-.navigation li:hover {
-    color: #fff;
+.navigation li:last-of-type {
+    padding-bottom: 0.8rem;
 }
 
-@media (max-width:780px) {
+*/ .navigation li:hover {
+    text-shadow: 1px 1px 1px var(--color-secondary);
+}
+
+@media (max-width:1020px) {
     .navigation {
-        right: 7.9rem;
+        font-size: 12px;
+        width: 8rem;
+        height: 12.5rem;
+    }
+
+    .navigation li {
+        width: 8rem;
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width:890px) {
+    .navigation {
+        left: 35rem;
+    }
+
+}
+
+@media (max-width:850px) {
+    .navigation {
+        left: 32rem;
+    }
+
+}
+
+
+@media (max-width:700px) {
+
+
+    .navigation {
+        left: 23rem;
     }
 
 }

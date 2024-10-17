@@ -1,7 +1,7 @@
 .edit {
     width: 25rem;
     height: 30rem;
-    background-color: #E0E7FF;
+    background-color: var(--color-primary);
     position: absolute;
     z-index: 100;
     top: 8rem;
@@ -13,9 +13,10 @@
 
 .edit--top {
     height: 5rem;
-    background-color: #EEF2FF;
+    background-color: var(--color-accent);
+    border-bottom: 2px solid var(--color-secondary);
     border-radius: 5px 5px 0 0;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -43,19 +44,18 @@
     align-items: center;
     font-size: 12px;
     background-color: transparent;
-    border: 1px solid #A5B4FC;
-    color: #A5B4FC;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
 }
 
 .edit--state button {
     width: 2.5rem;
     font-size: 10px;
-    background-color: #E0E7FF;
+    background-color: var(--color-accent);
 }
 
 .edit--btm {
-    padding: 1rem 2rem 0 2rem;
-    height: 20rem;
+    padding: 0.8rem 2rem 0 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -68,52 +68,98 @@
 }
 
 
-.edit--btm textarea {
-    margin-top: 1rem;
-    height: 18rem;
+.edit--form {
+    width: 20rem;
+    margin: 0 auto;
+    margin-top: 0.8rem;
+}
+
+.noteTitle {
+    margin-top: 0.2rem;
+    height: 2rem;
     outline: none;
     border: none;
+    width: 20rem;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    background-color: var(--color-accent);
+    resize: none;
 
 }
 
 
-.edit--btm h3 {
+.bold {
+    font-weight: 700;
+}
+
+
+.italic {
+    font-style: italic;
+}
+
+.noteContect {
+    margin-top: 0.1rem;
+    height: 16rem;
+    outline: none;
+    border: none;
+    width: 20rem;
+    padding: 1rem;
+    background-color: var(--color-accent);
+    resize: none;
+
+}
+
+
+textarea:invalid {
+    border: 1px dotted var(--color-secondary);
+}
+
+
+.form--preview {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.form--preview h3 {
     margin-bottom: 1rem;
-    letter-spacing: 1px;
 }
 
-.edit--btm p {
-    line-height: 22px;
+.form--preview p {
+    margin-left: 1rem;
+}
+
+form ::placeholder {
+    opacity: 0.6;
 }
 
 .edit--controls {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 5rem;
-    padding-block: 0.5rem;
 }
 
 
 
 
 .edit--controls button {
-    width: 4rem;
+    width: 3rem;
     height: 2rem;
     padding: 1rem;
     display: flex;
     border: none;
     border-radius: 5px;
-    margin: 1rem;
+    margin: 0.5rem 0 0 1rem;
     justify-content: center;
     align-items: center;
-    background-color: #EEF2FF;
-    color: #A5B4FC;
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    box-shadow: 1px 1px 5px var(--color-secondary);
 }
 
 .edit--controls button:hover {
-    background-color: #A5B4FC;
-    color: #EEF2FF;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 @media (max-width:780px) {

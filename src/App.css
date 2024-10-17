@@ -1,6 +1,13 @@
 * {
   margin: 0;
   box-sizing: border-box;
+
+}
+
+:root {
+  --color-primary: #FAFAF9;
+  --color-secondary: #0c0a09;
+  --color-accent: #a8a29e12;
 }
 
 body {
@@ -16,11 +23,46 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* font-family: 'Courier New', Courier, monospace; */
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  font-family: "Playfair Display", serif;
+}
+
+.app button {
+  font-family: "Playfair Display", serif;
+}
+
+
+.app input {
+  font-family: "Playfair Display", serif;
 }
 
 
 .dark {
-  background: radial-gradient(circle, rgba(94, 99, 182, 1) 0%, rgba(39, 41, 109, 1) 0%, rgba(94, 99, 182, 1) 100%);
+  background-image: url(bgdark.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  --color-primary: #042F2E;
+  --color-secondary: #f0fdfa;
+  --color-accent: #f0fdfa4f;
   color: #fff;
+}
+
+
+.dark button,
+.dark input,
+.dark textarea,
+.dark ::placeholder {
+
+  color: #ffffff;
+}
+
+
+
+@media (max-width:1285px) {
+
+  .app {
+    background-size: contain;
+  }
 }

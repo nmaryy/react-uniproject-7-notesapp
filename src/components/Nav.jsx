@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import './Nav.css'
 import Navigation from './Navigation'
-const Nav = () => {
+import { IoIosSearch } from "react-icons/io";
+
+const Nav = (props) => {
     const [isChecked, setIsChecked] = useState(false)
     const [navigationShown, setNavigationShown] = useState(false)
-    let ds = 'icon'
-    // let style = { isChecked &&transform: 'translateX(0.8rem)' }
-
 
     function modeHandler() {
         setIsChecked(!isChecked)
+        props.onMode(isChecked)
     }
     function brgHandlerShow() {
         setNavigationShown(true)
@@ -22,11 +22,14 @@ const Nav = () => {
     return (
         <div className='nav'>
             {navigationShown && <Navigation onMouseLeave={brgHandlerHide} />}
+
             <div className='nav--search'>
-                <input type='text' placeholder={`${ds} Search here`} />
+                <label name='search'><IoIosSearch /></label>
+                <input className={isChecked ? 'nav--search nav--dark' : 'nav--search '} autoComplete='off' id='search' type='text' placeholder={'Search here'} />
             </div>
             <div className='nav--icons'>
                 <div className='nav--mode'>
+
                     <div className={isChecked ? 'move' : 'nav--mode--check'}>
 
                         <input className={isChecked ? 'move--inp' : 'nav--mode--input '} type='checkbox' checked={isChecked} onChange={modeHandler} />
