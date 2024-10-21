@@ -10,12 +10,11 @@ import './Header.css'
 const Header = (props) => {
     const [listOpen, setListOpen] = useState({
         recent: false,
-        drafts: false,
         done: false,
         trash: false
     })
 
-    function recentOpenHandler(event) {
+    function recentOpenHandler() {
         setListOpen((prevstate) => {
             return {
                 ...prevstate,
@@ -23,15 +22,8 @@ const Header = (props) => {
             }
         })
     }
-    function draftsOpenHandler(event) {
-        setListOpen((prevstate) => {
-            return {
-                ...prevstate,
-                drafts: !listOpen.drafts
-            }
-        })
-    }
-    function doneOpenHandler(event) {
+
+    function doneOpenHandler() {
         setListOpen((prevstate) => {
             return {
                 ...prevstate,
@@ -39,7 +31,7 @@ const Header = (props) => {
             }
         })
     }
-    function trashOpenHandler(event) {
+    function trashOpenHandler() {
         setListOpen((prevstate) => {
             return {
                 ...prevstate,
@@ -47,6 +39,43 @@ const Header = (props) => {
             }
         })
     }
+
+
+    let orderItem = props.arr.map(a =>
+        <button key={a.id}>{a.title}
+            <span>
+
+                <i onClick={() => props.onDelete(event, a.id)}>
+                    <RiDeleteBin2Line />
+                </i>
+                <i onClick={() => props.onDone(event, a.id)}>
+                    <MdFileDownloadDone />
+                </i>
+            </span>
+        </button>
+    )
+
+    let doneItem = props.done.map(a =>
+        <button key={a.id}>{a.title}
+            <span>
+
+                <i className='trash--del' onClick={() => props.onDelDone(event, a.id)}>
+                    <RiDeleteBin2Line />
+                </i>
+            </span>
+        </button>
+    )
+    let trashItem = props.del.map(a =>
+        <button key={a.id}>{a.title}
+            <span>
+                <i className='trash--del' onClick={() => props.onDelTrash(event, a.id)}>
+                    <RiDeleteBin2Line />
+                </i>
+            </span>
+        </button>
+    )
+
+
 
     return (
         <div className='header '>
@@ -83,45 +112,16 @@ const Header = (props) => {
                                     Recent
                                 </span>
                             </div>
-                            {listOpen.recent && <>
-                                <button>Recent
-                                    <span>
+                            {listOpen.recent && props.arr.length === 0 ?
+                                <p>No Items in recent.</p> :
+                                <>
+                                    {listOpen.recent && orderItem}
+                                </>
 
-                                        <i>
-                                            <RiDeleteBin2Line />
-                                        </i>
-                                        <i>
-                                            <MdFileDownloadDone />
-                                        </i>
-                                    </span>
-                                </button>
-                                <button>Recent</button>
-                            </>
                             }
 
                         </div>
 
-                        <div className='order'>
-                            <div className='order--plus'>
-
-                                <span>
-
-                                    <button className='add-btn' id='drafts' onClick={draftsOpenHandler}>
-                                        {!listOpen.drafts ? <MdAdd />
-                                            : <MdOutlineRemove />
-                                        }
-                                    </button>
-                                </span>
-                                <span>
-                                    Drafts
-                                </span>
-                            </div>
-                            {listOpen.drafts && <>
-                                <button>Recent</button>
-                                <button>Recent</button>
-                                <button>Recent</button>
-                            </>}
-                        </div>
                         <div className='order'>
                             <div className='order--plus'>
                                 <span>
@@ -135,13 +135,13 @@ const Header = (props) => {
                                     Done
                                 </span>
                             </div>
-                            {listOpen.done && <>
-                                <button>Recent</button>
-                                <button>Recent</button>
-                                <button>Recent</button>
-                                <button>Recent</button>
-                                <button>Recent</button>
-                            </>}
+                            {listOpen.done && props.done.length === 0 ?
+                                <p>No Items in Done.</p> :
+                                <>
+                                    {listOpen.done && doneItem}                                </>
+
+                            }
+
                         </div>
                         <div className='order'>
                             <div className='order--plus'>
@@ -156,11 +156,12 @@ const Header = (props) => {
                                     Trash
                                 </span>
                             </div>
-                            {listOpen.trash && <>
-                                <button>Recent</button>
-                                <button>Recent</button>
-                                <button>Recent</button>
-                            </>}
+                            {listOpen.trash && props.del.length === 0 ?
+                                <p>No Items in Trash.</p> :
+                                <>
+                                    {listOpen.trash && trashItem}
+                                </>
+                            }
                         </div>
 
 

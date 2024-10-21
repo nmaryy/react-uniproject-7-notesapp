@@ -1,6 +1,7 @@
 import { BsEmojiGrin } from 'react-icons/bs';
 import './Body.css'
 import Edit from './Edit'
+import Editor from './Editor'
 import Nav from './Nav'
 import { MdOutlineEdit } from "react-icons/md";
 
@@ -34,6 +35,7 @@ const Body = (props) => {
     return (
         <div className='body' >
             {props.editShown && <Edit onArrayMake={props.onArrayMake} />}
+            {props.editorShown && <Editor editingItem={props.editingItem} onArrayUpdate={props.onArrayUpdate} />}
             <Nav onMode={props.onMode} />
             {/* {arrlength && arrlengthCard} */}
             {!props.auth ? card :
@@ -45,29 +47,20 @@ const Body = (props) => {
                     </div>
 
                     <div className='body--items' >
-                        <div className='body--item'>
-                            <div className='body--item--head'>
-                                <h4>Note</h4>
-                                <p>44/44/20</p>
+                        {props.arr.map(a =>
+                            <div className='body--item' key={a.id}>
+                                <div className='body--item--head'>
+                                    <h4>{a.title}</h4>
+                                    <div className='item--date'>{a.month}/{a.day}/{a.year}</div>
+                                </div>
+
+                                <p>{a.content}</p>
+                                <button className='btn--edit' onClick={() => props.onItemEdit(a)}><i>
+                                    <MdOutlineEdit />
+                                </i>
+                                </button>
                             </div>
-
-                            <ul>
-                                <li>dsd</li>
-                                <li>dsd</li>
-                                <li>dsd</li>
-                                <li>dsd</li>
-                                <li>dsd</li>
-                                <li>dsd</li>
-                                <li>dsd</li>
-                                <li>dsd</li>
-                                <li>dsd</li>
-                            </ul>
-                            <button className='btn--edit' onClick={props.onEdit}><i>
-                                <MdOutlineEdit />
-                            </i>
-                            </button>
-                        </div>
-
+                        )}
                     </div>
 
                 </div>

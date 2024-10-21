@@ -3,10 +3,9 @@ import './Edit.css'
 
 
 const Edit = (props) => {
-    const [formTitle, setFormTitle] = useState()
-    const [formContent, setFormContent] = useState('')
-    const [disable, setDisable] = useState(false)
-
+    const [formTitle, setFormTitle] = useState(props.editingItem.title)
+    const [formContent, setFormContent] = useState(props.editingItem.content)
+    const [disable, setDisable] = useState(true)
     let date = new Date()
 
     let month = date.getMonth() + 1
@@ -23,7 +22,7 @@ const Edit = (props) => {
 
     function formHandler(event) {
         event.preventDefault()
-        props.onArrayMake(formTitle, formContent, month, day, year, hour, minute)
+        props.onArrayUpdate(formTitle, formContent, month, day, year, hour, minute, props.editingItem.id)
     }
 
 
@@ -34,23 +33,23 @@ const Edit = (props) => {
             <div className='edit--top'>
                 <div className='edit--state'>
 
-                    <button onClick={() => setDisable(false)}>Write</button>
-                    <button onClick={() => setDisable(true)} >Preview</button>
+                    <button onClick={() => setDisable(false)}>Edit</button>
+                    <button onClick={() => setDisable(true)} >View</button>
                 </div>
             </div>
             <div className="edit--btm">
                 <div className='edit--btm--top'>
                     <div>
-                        <span>{hour}</span><span>:</span><span>{minute}</span>
+                        <span>{props.editingItem.hour}</span><span>:</span><span>{props.editingItem.minute}</span>
                     </div>
                     <div>
-                        <span>{month}</span><span>/</span><span>{day}</span><span>/</span><span>{year}</span>
+                        <span>{props.editingItem.month}</span><span>/</span><span>{props.editingItem.day}</span><span>/</span><span>{props.editingItem.year}</span>
 
                     </div>
                 </div>
                 {disable ? <div className='form--preview'>
-                    <h3>{formTitle}</h3>
-                    <p>{formContent}</p>
+                    <h3>{props.editingItem.title}</h3>
+                    <p>{props.editingItem.content}</p>
                 </div>
                     :
                     <form className='edit--form' onSubmit={formHandler}>
@@ -59,7 +58,6 @@ const Edit = (props) => {
                             required placeholder='Add your title'
                             className='noteTitle'
                             id='noteTitle' name='noteTitle'
-                            autoFocus
                             autoComplete='off' maxLength={30}
                             onChange={e => setFormTitle(e.target.value)}
                         />
@@ -71,7 +69,7 @@ const Edit = (props) => {
                             onChange={e => setFormContent(e.target.value)}
                         />
                         <div className="edit--controls">
-                            <button type='submit'>Add</button>
+                            <button type='submit'>Done</button>
                         </div>
                     </form>}
 

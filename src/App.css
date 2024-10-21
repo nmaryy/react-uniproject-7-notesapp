@@ -28,7 +28,9 @@ body {
   font-family: "Playfair Display", serif;
 }
 
-.app button {
+.app button,
+.app input,
+.app textarea {
   font-family: "Playfair Display", serif;
 }
 
