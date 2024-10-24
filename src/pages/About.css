@@ -2,6 +2,7 @@
     padding: 2rem;
     height: 100vh;
     color: var(--color-secondary);
+    font-family: "Playfair Display", serif;
 
 }
 
@@ -11,12 +12,9 @@
 
 .unauth {
     height: 20rem;
-    width: 40%;
+    width: 40rem;
     margin: 5rem auto;
-    background-color: var(--color-accent);
-    border: 1px solid var(--color-secondary);
-    border-radius: 5px;
-    box-shadow: 1px 1px 10px var(--color-secondary);
+
 }
 
 
@@ -24,33 +22,106 @@
     margin-top: 1rem;
 }
 
-@media (max-width:900px) {
-    .unauth {
-        font-size: 10px !important;
-        height: 30rem;
+
+@media (max-width:1536px) {
+
+    .header--desc {
+        margin: 2.5rem;
+        font-size: 16px;
     }
 
+    .unauth {
+        height: 20rem;
+        width: 55rem;
+        margin: 0 auto;
+    }
+
+
     .unauth p {
-        margin: 0.1rem;
+        font-size: 14px;
+        margin-top: 2rem;
+        line-height: 2rem;
     }
 }
 
-@media (max-width:1100px) {
-    .unauth {
-        height: 30rem;
+@media (max-width:1280px) {
+
+    .header--desc {
+        margin: 2.5rem;
+        font-size: 16px;
     }
 
+    .unauth {
+        height: 20rem;
+        width: 45rem;
+        margin: 0 auto;
+
+    }
+
+
     .unauth p {
-        margin: 0.5rem;
+        font-size: 14px;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .header--desc {
+        margin: 1.5rem;
+        font-size: 14px;
+    }
+
+    .unauth {
+        height: 20rem;
+        width: 40rem;
+        margin: 0 auto;
+
+    }
+
+
+    .unauth p {
+        font-size: 12px;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+
+    .header--desc {
+        margin: 1.5rem;
+        font-size: 12px;
+    }
+
+    .unauth {
+        height: 20rem;
+        width: 30rem;
+        margin: 0 auto;
+
+    }
+
+
+    .unauth p {
+        font-size: 10px;
     }
 }
 
 @media (max-width:640px) {
-    .unauth {
-        height: 30rem;
+
+    .header--desc {
+        margin: 1.5rem;
+        font-size: 10px;
     }
 
+    .unauth {
+        height: 20rem;
+        width: 24rem;
+        margin: 0 auto;
+
+    }
+
+
     .unauth p {
-        margin: 0.1rem;
+        font-size: 8px;
     }
 }

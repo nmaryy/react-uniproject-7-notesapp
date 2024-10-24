@@ -1,10 +1,9 @@
 import './Navigation.css'
-import Backdrop from './Backdrop'
 import { Link } from 'react-router-dom'
 
-const Navigation = (props) => {
+const Navigation = () => {
     return (
-        <div className='navigation' onMouseLeave={props.onMouseLeave}>
+        <div className='navigation' >
             <Link className='nav--links' to='/'>
                 Dashboard
             </Link>

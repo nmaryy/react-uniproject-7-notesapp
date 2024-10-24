@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import { IoIosSearch } from "react-icons/io";
+import { useMode } from '../assets/ContextProvider';
 import './Body.css'
 import Edit from './Edit'
 import Editor from './Editor'
@@ -5,8 +8,14 @@ import Nav from './Nav'
 import { MdOutlineEdit } from "react-icons/md";
 
 
-
 const Body = (props) => {
+    const { mode } = useMode()
+
+    const [navInput, setNavInput] = useState('')
+    const [resultElement, setResultElement] = useState('')
+    const resultCondition = resultElement !== null && resultElement.length > 0
+
+
 
     let card = <div className='body--card'>
         <h3>
@@ -33,14 +42,55 @@ const Body = (props) => {
 
 
 
+    function navChangeHandler(event) {
+        const { value } = event.target
+        setNavInput(value)
+        if (value.trim() !== '') {
+            setResultElement(() => props.arr.filter(d => d.title.includes(value) || d.content.includes(value)))
+        } else {
+            setResultElement(null)
+            setNavInput('')
+        }
+    }
+
+
     return (
         <div className='body' >
             {props.editShown && <Edit onArrayMake={props.onArrayMake} />}
             {props.editorShown && <Editor editingItem={props.editingItem} onArrayUpdate={props.onArrayUpdate} />}
-            <Nav onItemEdit={props.onItemEdit} data={props.arr} />
+            <Nav />
             {/* {arrlength && arrlengthCard} */}
             {!props.auth ? card :
+
                 <div className='body--list'>
+                    <div className='nav--search'>
+                        <form >
+                            <label name='search'><IoIosSearch /></label>
+                            <input
+                                value={navInput}
+                                onChange={navChangeHandler}
+                                className={!mode ? 'nav--search nav--dark' : 'nav--search '} autoComplete='off' id='search' type='text' placeholder={'Search here'} />
+                        </form>
+                    </div>
+
+                    {resultCondition && <div onMouseLeave={() =>
+                        setResultElement(null)
+                    }
+                        className='results--overlay'>
+                        {resultElement.map(r =>
+                            <div onClick={() => {
+                                props.onItemEdit(r)
+                                setResultElement(null)
+                                setNavInput('')
+
+                            }} className='indv--results--overlay' key={r.id}>
+                                <h4>{r.title}</h4>
+                                <p>{r.content}</p>
+                            </div>
+                        )}
+                    </div>}
+
+
                     <div className='body--nav'>
                         <h4>{`Maryam’s  Notes`}</h4>
                         <i>{` > `}</i>

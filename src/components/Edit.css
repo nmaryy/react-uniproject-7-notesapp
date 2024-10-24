@@ -120,6 +120,7 @@ textarea:invalid {
 .form--preview p {
     margin-top: 0.5rem;
     margin-left: 1rem;
+    word-wrap: break-word;
 }
 
 form ::placeholder {

@@ -1,6 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Playfair Display", serif;
 
 }
 
@@ -12,10 +13,6 @@
 
 body {
   margin: 0;
-  background-image: url(bglight.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   background-color: var(--color-primary);
   overflow: hidden;
 }
@@ -36,10 +33,6 @@ body {
 }
 
 .dark {
-  background-image: url(bgdark.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   --color-primary: #042F2E;
   --color-secondary: #f0fdfa;
   --color-accent: #f0fdfa4f;
@@ -63,13 +56,59 @@ body .dark {
 .banner--img {
   height: 3rem;
   width: 6rem;
+  position: fixed;
 }
 
 
-.autolayout {
-  display: flex;
-  margin-top: 1rem;
-  flex-direction: row;
-  align-items: flex-end;
-  padding: 0 3rem;
+@media (max-width:1536px) {
+
+  .banner--img {
+    height: 5rem;
+    width: 8rem;
+    top: 3rem;
+    left: 3rem;
+
+  }
+}
+
+@media (max-width:1280px) {
+
+  .banner--img {
+    height: 3rem;
+    width: 6rem;
+    top: 3rem;
+    left: 4.2rem;
+  }
+}
+
+@media (max-width:1024px) {
+
+  .banner--img {
+    height: 3rem;
+    width: 5rem;
+    top: 2.5rem;
+    left: 4.7rem;
+  }
+}
+
+@media (max-width:768px) {
+
+  .banner--img {
+    height: 2.5rem;
+    width: 4.5rem;
+    top: 2.5rem;
+    left: 4.8rem;
+  }
+}
+
+@media (max-width:640px) {
+
+  .banner--img {
+    height: 2.5rem;
+    width: 4rem;
+    top: 2rem;
+    left: 3rem;
+
+
+  }
 }

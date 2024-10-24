@@ -6,12 +6,16 @@ import { useMode } from '../assets/ContextProvider';
 
 
 function Settings() {
-    const { mode } = useMode()
+    const { mode, setMode } = useMode()
+
+
 
     const [countries, setCountries] = useState('')
     const [profileUpload, setProfileUpload] = useState('')
 
-
+    function modeHandler() {
+        setMode(prevMode => !prevMode)
+    }
 
     function profileUploadHandler(event) {
         setProfileUpload(event.target.value)
@@ -31,12 +35,15 @@ function Settings() {
     }, [])
     return (
         <div className={mode ? 'settings' : 'settings dark'}>
-            <div className='autolayout'>
-                {mode ? <img className='banner--img' src='bannerlight.svg' /> : <img src='bannerdark.svg' />}
-                <Nav />
-            </div>
+            <Nav />
             <img src={profileUpload} />
             <div className='settings--card'>
+                <label htmlFor='switch-mode' >Switch Mode</label>
+                <div className='nav--mode'>
+                    <div className={!mode ? 'move' : 'nav--mode--check'}>
+                        <input id='switch-mode' className={!mode ? 'move--inp' : 'nav--mode--input '} type='checkbox' checked={mode} onChange={modeHandler} />
+                    </div>
+                </div>
                 <form>
                     <div className='form--grids'>
                         <div className='form--col'>
@@ -53,30 +60,32 @@ function Settings() {
                         </div>
                         <div className='form--col'>
                             <label>Age</label>
-                            <input placeholder='10' type='number' />
+                            <input placeholder='20' type='number' />
                         </div>
                         <div className='form--col'>
-                            <label className='file--label' htmlFor='file'>Upload Profile Picture</label>
+                            <label htmlFor='file'>Upload Profile Picture</label>
                             <input accept='image/*' name='file' id='file' size={60} type='file' />
                         </div>
-                        <div className='selections'>
-                            <select className={mode ? '' : 'select--dark'}>
-                                <option>
-                                    Gender
-                                </option>
-                                <option>
-                                    Male
-                                </option>
-                                <option>
-                                    Female
-                                </option>
-                            </select>
-                            <select className={mode ? '' : 'select--dark'}>
-                                <option>
-                                    Country
-                                </option>
-                                {countries}
-                            </select>
+                        <div className='form--col'>
+                            <div className='selections'>
+                                <select className={mode ? '' : 'select--dark'}>
+                                    <option>
+                                        Gender
+                                    </option>
+                                    <option>
+                                        Male
+                                    </option>
+                                    <option>
+                                        Female
+                                    </option>
+                                </select>
+                                <select className={mode ? '' : 'select--dark'}>
+                                    <option>
+                                        Country
+                                    </option>
+                                    {countries}
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div>

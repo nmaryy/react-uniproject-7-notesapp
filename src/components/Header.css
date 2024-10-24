@@ -7,20 +7,16 @@
     background-color: var(--color-accent);
     position: fixed;
     font-size: 12px;
-    padding: 2rem 0 1rem 1rem;
+    padding: 7rem 0 1rem 1rem;
     height: 102vh;
 
 }
 
-.header--top {
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-}
 
 
 .header--middle {
     height: 34rem;
-    margin-left: 0;
+    width: 80%;
 }
 
 
@@ -90,7 +86,7 @@
 }
 
 
-.header button {
+.button--title--parent {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -157,9 +153,6 @@
 .header--middle--add .add-btn:hover {
     background-color: var(--color-secondary);
     color: var(--color-primary);
-    width: 2rem;
-    height: 2rem;
-    border-radius: 20px;
 }
 
 .order--plus button {
@@ -174,6 +167,7 @@
     margin-top: 0;
     font-size: 0.6rem;
     padding: 0;
+    border: none;
 
 }
 
@@ -204,11 +198,365 @@
     overflow: hidden;
 }
 
-@media (max-width:700px) {
+@media (max-width:1536px) {
 
     .header {
+        width: 14rem;
         font-size: 10px;
-        width: 12rem;
+        padding: 8.5rem 0 1rem 1rem;
+
+    }
+
+
+    .header--middle--acc {
+        margin-bottom: 0.5rem;
+    }
+
+    .header--middle--acc img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+
+    .header--middle--add {
+        font-size: 8px;
+    }
+
+    .header--btm {
+        margin-top: 0.5rem;
+    }
+
+
+    .order {
+        margin-top: 1rem;
+    }
+
+
+    .order--plus {
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+
+    .button--title--parent {
+        font-size: 12px;
+        margin-top: 0.5rem;
+        width: 9rem;
+        margin-right: 0.5rem;
+    }
+
+    .button--title--parent i {
+        margin-left: 0.8rem;
+    }
+
+    .header button i:last-of-type {
+        font-size: 0.8rem;
+    }
+
+    .header button i:first-of-type {
+        font-size: 0.8rem;
+    }
+
+    .header--middle--add .add-btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+    }
+
+    .order--plus button {
+        margin-right: 0.4rem;
+        font-size: 0.7rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+    .header--desc {
+        line-height: 1.8rem;
+        margin: 2rem 1rem 3rem 1rem !important;
+    }
+
+
+    .header--desc p {
+        margin-top: 1rem;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:1280px) {
+
+    .header {
+        width: 14rem;
+        font-size: 10px;
+        padding: 8.5rem 0 1rem 1rem;
+
+    }
+
+
+    .header--middle--acc {
+        margin-bottom: 1rem;
+        font-size: 12px;
+    }
+
+    .header--middle--acc img {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+
+    .header--middle--add {
+        font-size: 12px;
+    }
+
+    .header--btm {
+        margin-top: 0.5rem;
+    }
+
+
+    .order {
+        margin-top: 1rem;
+    }
+
+
+    .order--plus {
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+
+    .button--title--parent {
+        font-size: 12px;
+        margin-top: 0.5rem;
+        width: 9rem;
+        margin-right: 0.5rem;
+    }
+
+    .button--title--parent i {
+        margin-left: 0.8rem;
+    }
+
+    .header button i:last-of-type {
+        font-size: 0.8rem;
+    }
+
+    .header button i:first-of-type {
+        font-size: 0.8rem;
+    }
+
+    .header--middle--add .add-btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+    }
+
+    .order--plus button {
+        margin-right: 0.4rem;
+        font-size: 0.7rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+    .header--desc {
+        line-height: 1.8rem;
+        margin: 1rem 1rem 3rem 0 !important;
+    }
+
+
+    .header--desc p {
+        margin-top: 1rem;
+        font-size: 10px;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .header {
+        width: 14rem;
+        font-size: 10px;
+        padding: 8.5rem 0 1rem 1rem;
+
+    }
+
+
+    .header--middle--acc {
+        margin-bottom: 0.5rem;
+    }
+
+    .header--middle--acc img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+
+    .header--middle--add {
+        font-size: 8px;
+    }
+
+    .header--btm {
+        margin-top: 0.5rem;
+    }
+
+
+    .order {
+        margin-top: 1rem;
+    }
+
+
+    .order--plus {
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+
+    .button--title--parent {
+        font-size: 12px;
+        margin-top: 0.5rem;
+        width: 9rem;
+        margin-right: 0.5rem;
+    }
+
+    .button--title--parent i {
+        margin-left: 0.8rem;
+    }
+
+    .header button i:last-of-type {
+        font-size: 0.8rem;
+    }
+
+    .header button i:first-of-type {
+        font-size: 0.8rem;
+    }
+
+    .header--middle--add .add-btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+    }
+
+    .order--plus button {
+        margin-right: 0.4rem;
+        font-size: 0.7rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+    .header--desc {
+        line-height: 1.8rem;
+        margin: -1rem 1rem 3rem 0 !important;
+    }
+
+
+    .header--desc p {
+        margin-top: 1rem;
+        font-size: 10px;
+    }
+}
+
+@media (max-width:768px) {
+
+    .header {
+        width: 14rem;
+        font-size: 10px;
+        padding: 7rem 0 1rem 1rem;
+
+    }
+
+
+    .header--middle--acc {
+        margin-bottom: 0.5rem;
+        font-size: 10px;
+    }
+
+    .header--middle--acc img {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+
+    .header--middle--add {
+        font-size: 8px;
+    }
+
+    .header--btm {
+        margin-top: 0.5rem;
+    }
+
+
+    .order {
+        margin-top: 1rem;
+        font-size: 8px;
+    }
+
+
+    .order--plus {
+        font-weight: 500;
+        font-size: 8px;
+    }
+
+
+    .button--title--parent {
+        font-size: 10px;
+        margin-top: 0.5rem;
+        width: 8rem;
+        margin-right: 0.5rem;
+    }
+
+    .button--title--parent i {
+        margin-left: 0.8rem;
+    }
+
+    .header button i:last-of-type {
+        font-size: 0.7rem;
+    }
+
+    .header button i:first-of-type {
+        font-size: 0.7rem;
+    }
+
+    .header--middle--add .add-btn {
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 0.8rem;
+        margin-right: 0.3rem;
+    }
+
+    .order--plus button {
+        margin-right: 0.4rem;
+        font-size: 0.4rem;
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+
+    .header--desc {
+        line-height: 1.2rem;
+        margin: 1.5rem 1rem 3rem 0 !important;
+    }
+
+
+    .header--desc p {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width:640px) {
+
+    .header {
+        width: 10rem;
+        font-size: 8px;
+        padding: 6rem 0 1rem 1rem;
+
+    }
+
+
+    .header--middle--acc {
+        margin-bottom: 0;
+        font-size: 8px;
     }
 
     .header--middle--acc img {
@@ -216,17 +564,73 @@
         width: 2rem;
     }
 
-    .header--middle--acc {
-        margin-bottom: 0;
+
+    .header--middle--add {
+        font-size: 8px;
     }
 
-    .header--middle--add button {
-        width: 1rem !important;
-        height: 1rem !important;
+    .header--btm {
+        margin-top: 0.5rem;
     }
 
-    /* .order:first-child button {
-        margin-right: 0;
-        background-color: aliceblue;
-    } */
+
+    .order {
+        margin-top: 0.5rem;
+    }
+
+
+    .order--plus {
+        font-weight: 500;
+        font-size: 8px;
+    }
+
+
+    .button--title--parent {
+        font-size: 8px;
+        margin-top: 0.5rem;
+        width: 6rem;
+        margin-right: 0.5rem;
+    }
+
+    .button--title--parent i {
+        margin-left: 0.8rem;
+    }
+
+    .header button i:last-of-type {
+        font-size: 0.7rem;
+    }
+
+    .header button i:first-of-type {
+        font-size: 0.7rem;
+    }
+
+    .header--middle--add .add-btn {
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 0.8rem;
+        margin-right: 0.3rem;
+    }
+
+    .header--middle--add .add-btn:hover {
+        background-color: var(--color-secondary);
+        color: var(--color-primary);
+    }
+
+    .order--plus button {
+        margin-right: 0.2rem;
+        font-size: 0.4rem;
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+
+    .header--desc {
+        line-height: 1rem;
+        margin: 2.5rem 1rem 3rem 0 !important;
+    }
+
+
+    .header--desc p {
+        margin-top: 0.5rem;
+    }
 }

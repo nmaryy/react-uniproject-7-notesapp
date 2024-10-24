@@ -1,16 +1,11 @@
 .navigation {
-    width: 10rem;
-    height: 14rem;
-    background-color: var(--color-primary);
-    box-shadow: 1px 1px 5px var(--color-secondary);
     color: var(--color-secondary);
-    position: absolute;
     z-index: 100;
-    top: 5.5rem;
-    right: 12.6rem;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .nav--links {
@@ -18,15 +13,8 @@
     color: var(--color-secondary);
     margin: 0;
     cursor: pointer;
-    width: 10rem;
-    padding: 0.9rem;
-    text-decoration: none;
+    padding: 0.5rem 1rem;
     font-size: 12px;
-}
-
-
-.nav--links:not(:last-of-type) {
-    border-bottom: 1px solid var(--color-secondary);
 }
 
 
@@ -34,39 +22,48 @@
     text-shadow: 1px 1px 1px var(--color-secondary);
 }
 
-@media (max-width:1020px) {
-    .navigation {
-        font-size: 12px;
-        width: 8rem;
-        height: 12.5rem;
-    }
+.nav--links:focus {
+    text-shadow: 1px 1px 1px var(--color-secondary);
+}
+
+@media (max-width:1536px) {
 
     .nav--links {
-        width: 8rem;
-        padding: 0.7rem;
+        padding: 1.5rem;
+        font-size: 16px;
     }
 }
 
-@media (max-width:890px) {
-    .navigation {
-        left: 35rem;
-    }
+@media (max-width:1280px) {
 
+    .nav--links {
+        font-size: 14px;
+        padding: 1rem;
+    }
 }
 
-@media (max-width:850px) {
-    .navigation {
-        left: 32rem;
-    }
+@media (max-width:1024px) {
 
+    .nav--links {
+        font-size: 12px;
+        padding: 1rem;
+    }
 }
 
+@media (max-width:768px) {
 
-@media (max-width:700px) {
-
-
-    .navigation {
-        left: 23rem;
+    .nav--links {
+        font-size: 10px;
+        padding: 0.5rem;
     }
+}
 
+@media (max-width:640px) {
+
+    .nav--links {
+        padding: 0.5rem;
+        font-size: 8px;
+
+
+    }
 }

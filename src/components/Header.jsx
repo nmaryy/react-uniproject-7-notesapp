@@ -48,7 +48,7 @@ const Header = (props) => {
 
 
     let orderItem = props.arr.map(a =>
-        <button key={a.id}>
+        <button className='button--title--parent' key={a.id}>
             <span className='button--title'>
 
                 {a.title}
@@ -68,7 +68,7 @@ const Header = (props) => {
     )
 
     let doneItem = props.done.map(a =>
-        <button key={a.id}>
+        <button className='button--title--parent' key={a.id}>
             <span className='button--title'>
                 {a.title}
             </span>
@@ -81,7 +81,7 @@ const Header = (props) => {
         </button >
     )
     let trashItem = props.del.map(a =>
-        <button key={a.id}>
+        <button className='button--title--parent' key={a.id}>
             <span className='button--title'>
                 {a.title}
             </span>
@@ -98,12 +98,6 @@ const Header = (props) => {
 
     return (
         <div className='header '>
-            <div className='header--top'>
-                <span>
-                    <img className='banner--img' src={mode ? 'bannerlight.svg' : 'bannerdark.svg'} />
-
-                </span>
-            </div>
             {props.auth ?
                 <div className='header--middle'>
                     <div className='header--middle--acc'>
