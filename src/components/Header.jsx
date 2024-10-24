@@ -1,13 +1,19 @@
 import { useState } from 'react'
 import Footer from './Footer'
+import UnauthHeader from './UnauthHeader'
 import { MdAdd } from "react-icons/md";
 import { MdOutlineRemove } from "react-icons/md";
 import { MdFileDownloadDone } from "react-icons/md";
 import { RiDeleteBin2Line } from "react-icons/ri";
+import { useMode } from '../assets/ContextProvider';
+
 
 
 import './Header.css'
 const Header = (props) => {
+
+    const { mode } = useMode()
+
     const [listOpen, setListOpen] = useState({
         recent: false,
         done: false,
@@ -42,7 +48,13 @@ const Header = (props) => {
 
 
     let orderItem = props.arr.map(a =>
-        <button key={a.id}>{a.title}
+        <button key={a.id}>
+            <span className='button--title'>
+
+                {a.title}
+            </span>
+
+
             <span>
 
                 <i onClick={() => props.onDelete(event, a.id)}>
@@ -56,17 +68,24 @@ const Header = (props) => {
     )
 
     let doneItem = props.done.map(a =>
-        <button key={a.id}>{a.title}
+        <button key={a.id}>
+            <span className='button--title'>
+                {a.title}
+            </span>
             <span>
 
                 <i className='trash--del' onClick={() => props.onDelDone(event, a.id)}>
                     <RiDeleteBin2Line />
                 </i>
-            </span>
-        </button>
+            </span >
+        </button >
     )
     let trashItem = props.del.map(a =>
-        <button key={a.id}>{a.title}
+        <button key={a.id}>
+            <span className='button--title'>
+                {a.title}
+            </span>
+
             <span>
                 <i className='trash--del' onClick={() => props.onDelTrash(event, a.id)}>
                     <RiDeleteBin2Line />
@@ -81,14 +100,14 @@ const Header = (props) => {
         <div className='header '>
             <div className='header--top'>
                 <span>
-                    <img src={props.appMode ? 'bannerlight.svg' : 'bannerdark.svg'} />
+                    <img className='banner--img' src={mode ? 'bannerlight.svg' : 'bannerdark.svg'} />
 
                 </span>
             </div>
             {props.auth ?
                 <div className='header--middle'>
                     <div className='header--middle--acc'>
-                        {props.appMode ? <img src='avatarlight.png' /> : <img src='avatardark.png' />}
+                        {mode ? <img src='avatarlight.png' /> : <img src='avatardark.png' />}
 
                         <div>Maryam's Notes</div>
                     </div>
@@ -168,12 +187,7 @@ const Header = (props) => {
                     </div>
                 </div>
 
-                : <div className='header--desc'>
-                    <h4>About us</h4>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores vitae repudiandae, voluptas quibusdam, dolore porro perspiciatis eligendi ad eum soluta animi et quas natus atque quos sapiente! Eligendi, aliquam laudantium. Soluta autem similique dolorum, numquam est voluptates porro tempore fuga asperiores alias neque blanditiis vero optio quisquam eveniet sint! Doloribus!
-                    </p>
-                </div>}
+                : <UnauthHeader />}
             <Footer />
         </div >
     )

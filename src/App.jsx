@@ -3,19 +3,21 @@ import './App.css'
 import Body from './components/Body'
 import Header from './components/Header'
 import Backdrop from './components/Backdrop'
+import { useMode } from './assets/ContextProvider';
 
 function App() {
   const [editShown, setEditShown] = useState(false)
   const [editorShown, setEditorShown] = useState(false)
-  const [appMode, setAppMode] = useState(true)
   const [arr, setArr] = useState(JSON.parse(localStorage.getItem('notes')) || [])
   const [del, setDel] = useState(JSON.parse(localStorage.getItem('delete')) || [])
   const [done, setDone] = useState(JSON.parse(localStorage.getItem('done')) || [])
   const [editingItem, setEditingItem] = useState({})
   let auth = true
+  const { mode } = useMode()
 
   function editorHandler() {
     setEditShown(!editShown)
+
   }
 
   function itemEditHandler(a) {
@@ -23,9 +25,6 @@ function App() {
     setEditingItem(a)
   }
 
-  function modeHandler(isChecked) {
-    setAppMode(isChecked)
-  }
 
   useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(arr))
@@ -39,7 +38,7 @@ function App() {
 
   function ArrayMakeHandler(formTitle, formContent, month, day, year, hour, minute) {
     const newNote = {
-      id: Math.random(),
+      id: crypto.randomUUID(),
       title: formTitle,
       content: formContent,
       month: month,
@@ -60,19 +59,19 @@ function App() {
         if (note.id === id) {
           console.log(oldNotes)
           newArr.unshift({
-            [note.id]: id,
-            [note.title]: formTitle,
-            [note.content]: formContent,
-            [note.month]: month,
-            [note.day]: day,
-            [note.year]: year,
-            [note.hour]: hour,
-            [note.minute]: minute
+            id: id,
+            title: formTitle,
+            content: formContent,
+            month: month,
+            day: day,
+            year: year,
+            hour: hour,
+            minute: minute
           })
           console.log(formTitle)
 
         } else {
-          newArr.push(oldNotes)
+          newArr.push(note)
         }
       })
       return newArr
@@ -128,25 +127,24 @@ function App() {
 
   }
   return (
-    <div className={appMode ? 'app' : 'app dark'}>
+    <div className={mode ? 'app' : 'app dark'}>
       {editShown && <Backdrop onClose={editorHandler} />}
       {editorShown && <Backdrop onClose={itemEditHandler} />}
       <Header onArrayMake={ArrayMakeHandler} arr={arr} auth={auth} onEdit={editorHandler}
-        appMode={appMode}
+        mode={mode}
         onDelete={deleteNoteHandler}
         onDone={doneNoteHandler}
         onDelDone={deleteDoneHandler}
         onDelTrash={deleteTrashHandler}
         del={del}
         done={done}
-      // onItemEdit={itemEditHandler}
       />
       <Body onItemEdit={itemEditHandler}
         editingItem={editingItem}
         onArrayMake={ArrayMakeHandler}
         onArrayUpdate={ArrayUpdateHandler}
         arr={arr} onEdit={itemEditHandler} editorShown={editorShown}
-        onMode={modeHandler} appMode={appMode} auth={auth} editShown={editShown} />
+        mode={mode} auth={auth} editShown={editShown} />
     </div>
   )
 }

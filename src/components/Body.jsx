@@ -1,4 +1,3 @@
-import { BsEmojiGrin } from 'react-icons/bs';
 import './Body.css'
 import Edit from './Edit'
 import Editor from './Editor'
@@ -6,7 +5,9 @@ import Nav from './Nav'
 import { MdOutlineEdit } from "react-icons/md";
 
 
+
 const Body = (props) => {
+
     let card = <div className='body--card'>
         <h3>
             Login to add your notes.
@@ -36,7 +37,7 @@ const Body = (props) => {
         <div className='body' >
             {props.editShown && <Edit onArrayMake={props.onArrayMake} />}
             {props.editorShown && <Editor editingItem={props.editingItem} onArrayUpdate={props.onArrayUpdate} />}
-            <Nav onMode={props.onMode} />
+            <Nav onItemEdit={props.onItemEdit} data={props.arr} />
             {/* {arrlength && arrlengthCard} */}
             {!props.auth ? card :
                 <div className='body--list'>

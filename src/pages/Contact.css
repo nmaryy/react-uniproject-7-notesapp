@@ -1,0 +1,40 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-secondary);
+    padding: 2rem;
+    height: 100vh;
+}
+
+
+.contact--desc {
+    height: 20rem;
+    margin: 3rem auto;
+    width: 60%;
+}
+
+.contact--desc ul {
+    padding: 0;
+}
+
+.contact--desc li {
+    padding: 1rem;
+    background-color: aliceblue;
+    background-color: var(--color-accent);
+    list-style: none;
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 1px 1px 10px var(--color-secondary);
+    border-radius: 5px;
+}
+
+
+@media (max-width:800px) {
+    .contact {
+        font-size: 10px !important;
+    }
+
+
+}
