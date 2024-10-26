@@ -114,6 +114,13 @@ function App() {
     )
 
   }
+  function restoreTrashHandler(event, a) {
+    event.stopPropagation()
+    setArr(prevArr => [a, ...prevArr])
+    setDel(oldNotes =>
+      oldNotes.filter(note => note.id !== a.id)
+    )
+  }
   function doneNoteHandler(event, noteId) {
     event.stopPropagation()
     setDone(prevDone => {
@@ -136,6 +143,7 @@ function App() {
         onDone={doneNoteHandler}
         onDelDone={deleteDoneHandler}
         onDelTrash={deleteTrashHandler}
+        onrestoreTrash={restoreTrashHandler}
         del={del}
         done={done}
       />

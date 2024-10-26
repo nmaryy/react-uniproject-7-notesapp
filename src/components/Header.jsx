@@ -6,6 +6,8 @@ import { MdOutlineRemove } from "react-icons/md";
 import { MdFileDownloadDone } from "react-icons/md";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import { useMode } from '../assets/ContextProvider';
+import { MdOutlineRestore } from "react-icons/md";
+
 
 
 
@@ -90,6 +92,10 @@ const Header = (props) => {
                 <i className='trash--del' onClick={() => props.onDelTrash(event, a.id)}>
                     <RiDeleteBin2Line />
                 </i>
+                <i className='trash--del' onClick={() => props.onrestoreTrash(event, a)}>
+                    <MdOutlineRestore />
+
+                </i>
             </span>
         </button>
     )
@@ -126,7 +132,7 @@ const Header = (props) => {
                                 </span>
                             </div>
                             {listOpen.recent && props.arr.length === 0 ?
-                                <p>No Items in recent.</p> :
+                                <p className='no--item'>No Items in recent.</p> :
                                 <>
                                     {listOpen.recent && orderItem}
                                 </>
@@ -149,7 +155,7 @@ const Header = (props) => {
                                 </span>
                             </div>
                             {listOpen.done && props.done.length === 0 ?
-                                <p>No Items in Done.</p> :
+                                <p className='no--item'>No Items in Done.</p> :
                                 <>
                                     {listOpen.done && doneItem}                                </>
 
@@ -170,7 +176,7 @@ const Header = (props) => {
                                 </span>
                             </div>
                             {listOpen.trash && props.del.length === 0 ?
-                                <p>No Items in Trash.</p> :
+                                <p className='no--item'>No Items in Trash.</p> :
                                 <>
                                     {listOpen.trash && trashItem}
                                 </>

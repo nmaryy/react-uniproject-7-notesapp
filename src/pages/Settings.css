@@ -9,6 +9,12 @@
 }
 
 
+/* .footer {
+    margin-bottom: 0;
+    bottom: 1rem;
+} */
+
+
 .settings--card {
     display: flex;
     flex-direction: column;

@@ -198,6 +198,11 @@
     overflow: hidden;
 }
 
+
+.no--item {
+    margin-top: 0.5rem;
+}
+
 @media (max-width:1536px) {
 
     .header {
