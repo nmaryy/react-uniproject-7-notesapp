@@ -1,29 +1,23 @@
 import { useState } from 'react'
 import './Edit.css'
+import { useArray } from '../assets/ArrayProvider';
+
 
 
 const Edit = (props) => {
     const [formTitle, setFormTitle] = useState()
     const [formContent, setFormContent] = useState('')
     const [disable, setDisable] = useState(false)
+    const { addNote } = useArray()
 
-    let date = new Date()
+    let time = new Date().toLocaleTimeString({ hourCycle: 'h24' })
+    let date = new Date().toLocaleDateString()
 
-    let month = date.getMonth() + 1
-    let day = date.getDate()
-    let year = date.getFullYear()
-    let hour = date.getHours()
-    if (hour < 10) {
-        hour = 0 + `${hour}`
-    }
-    let minute = date.getMinutes()
-    if (minute < 10) {
-        minute = 0 + `${minute}`
-    }
-
+    const data = { formTitle, formContent, date, time }
     function formHandler(event) {
         event.preventDefault()
-        props.onArrayMake(formTitle, formContent, month, day, year, hour, minute)
+        addNote(data)
+        props.onArrayMake()
     }
 
 
@@ -41,10 +35,10 @@ const Edit = (props) => {
             <div className="edit--btm">
                 <div className='edit--btm--top'>
                     <div>
-                        <span>{hour}</span><span>:</span><span>{minute}</span>
+                        <span>{time}</span>
                     </div>
                     <div>
-                        <span>{month}</span><span>/</span><span>{day}</span><span>/</span><span>{year}</span>
+                        <span>{date}</span>
 
                     </div>
                 </div>

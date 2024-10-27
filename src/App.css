@@ -6,9 +6,9 @@
 }
 
 :root {
-  --color-primary: #FAFAF9;
+  --color-primary: #fff;
   --color-secondary: #0c0a09;
-  --color-accent: #a8a29e12;
+  --color-accent: #fafaf9;
 }
 
 body {
@@ -33,9 +33,9 @@ body {
 }
 
 .dark {
-  --color-primary: #042F2E;
-  --color-secondary: #f0fdfa;
-  --color-accent: #f0fdfa4f;
+  --color-primary: #09090b;
+  --color-secondary: #fff;
+  --color-accent: #52525b;
   color: #fff;
 }
 

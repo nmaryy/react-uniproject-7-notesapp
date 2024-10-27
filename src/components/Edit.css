@@ -3,7 +3,7 @@
     height: 30rem;
     background-color: var(--color-primary);
     position: absolute;
-    z-index: 100;
+    z-index: 110;
     top: 8rem;
     right: 35%;
     border-radius: 2px;
@@ -168,7 +168,7 @@ form ::placeholder {
         width: 30rem;
         height: 40rem;
         right: 32%;
-        top: 15rem;
+        top: 8rem;
         font-size: 16px;
     }
 
@@ -236,6 +236,18 @@ form ::placeholder {
     }
 }
 
+
+@media (max-width:1280px) {
+
+    .edit {
+        width: 30rem;
+        height: 40rem;
+        right: 32%;
+        top: 2rem;
+        font-size: 16px;
+    }
+}
+
 @media (max-width:1024px) {
 
     .edit {
@@ -243,6 +255,7 @@ form ::placeholder {
         height: 30rem;
         right: 30%;
         font-size: 14px;
+        top: 8rem;
     }
 
 

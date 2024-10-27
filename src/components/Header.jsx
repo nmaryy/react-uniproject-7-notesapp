@@ -5,16 +5,15 @@ import { MdAdd } from "react-icons/md";
 import { MdOutlineRemove } from "react-icons/md";
 import { MdFileDownloadDone } from "react-icons/md";
 import { RiDeleteBin2Line } from "react-icons/ri";
-import { useMode } from '../assets/ContextProvider';
 import { MdOutlineRestore } from "react-icons/md";
 
 
+import { useArray } from '../assets/ArrayProvider';
 
 
 import './Header.css'
 const Header = (props) => {
-
-    const { mode } = useMode()
+    const { notes, hideNote, doneNote, deleteNote } = useArray()
 
     const [listOpen, setListOpen] = useState({
         recent: false,
@@ -49,56 +48,65 @@ const Header = (props) => {
     }
 
 
-    let orderItem = props.arr.map(a =>
-        <button className='button--title--parent' key={a.id}>
-            <span className='button--title'>
+    let orderItem = notes.map(a => {
+        if (a.state === "pending") {
+            return <button className='button--title--parent' key={a.id}>
+                <span className='button--title'>
 
-                {a.title}
-            </span>
+                    {a.title}
+                </span>
 
 
-            <span>
+                <span>
 
-                <i onClick={() => props.onDelete(event, a.id)}>
-                    <RiDeleteBin2Line />
-                </i>
-                <i onClick={() => props.onDone(event, a.id)}>
-                    <MdFileDownloadDone />
-                </i>
-            </span>
-        </button>
+                    <i onClick={() => hideNote(a.id)}>
+                        <RiDeleteBin2Line />
+                    </i>
+                    <i onClick={() => doneNote(a.id)}>
+                        <MdFileDownloadDone />
+                    </i>
+                </span>
+            </button>
+        }
+    }
     )
 
-    let doneItem = props.done.map(a =>
-        <button className='button--title--parent' key={a.id}>
-            <span className='button--title'>
-                {a.title}
-            </span>
-            <span>
+    let doneItem = notes.map(a => {
+        if (a.state === "done") {
+            return <button className='button--title--parent' key={a.id}>
+                <span className='button--title'>
+                    {a.title}
+                </span>
+                <span>
 
-                <i className='trash--del' onClick={() => props.onDelDone(event, a.id)}>
-                    <RiDeleteBin2Line />
-                </i>
-            </span >
-        </button >
-    )
-    let trashItem = props.del.map(a =>
-        <button className='button--title--parent' key={a.id}>
-            <span className='button--title'>
-                {a.title}
-            </span>
+                    <i className='trash--del' onClick={() => hideNote(a.id)}>
+                        <RiDeleteBin2Line />
+                    </i>
+                </span >
+            </button >
+        }
+    })
 
-            <span>
-                <i className='trash--del' onClick={() => props.onDelTrash(event, a.id)}>
-                    <RiDeleteBin2Line />
-                </i>
-                <i className='trash--del' onClick={() => props.onrestoreTrash(event, a)}>
-                    <MdOutlineRestore />
 
-                </i>
-            </span>
-        </button>
-    )
+    let trashItem = notes.map(a => {
+        if (a.state === "hidden") {
+            return <button className='button--title--parent' key={a.id}>
+                <span className='button--title'>
+                    {a.title}
+                </span>
+
+                <span>
+                    <i className='trash--del' onClick={() => deleteNote(a.id)}>
+                        <RiDeleteBin2Line />
+                    </i>
+                    {/* <i className='trash--del' onClick={() => props.onrestoreTrash(event, a)}>
+                        <MdOutlineRestore />
+
+                    </i> */}
+                </span>
+            </button>
+        }
+    })
 
 
 
@@ -107,8 +115,7 @@ const Header = (props) => {
             {props.auth ?
                 <div className='header--middle'>
                     <div className='header--middle--acc'>
-                        {mode ? <img src='avatarlight.png' /> : <img src='avatardark.png' />}
-
+                        <img src='avatarlight.png' />
                         <div>Maryam's Notes</div>
                     </div>
                     <div className='header--middle--add'>
@@ -131,7 +138,7 @@ const Header = (props) => {
                                     Recent
                                 </span>
                             </div>
-                            {listOpen.recent && props.arr.length === 0 ?
+                            {listOpen.recent && notes.length === 0 ?
                                 <p className='no--item'>No Items in recent.</p> :
                                 <>
                                     {listOpen.recent && orderItem}
@@ -154,7 +161,7 @@ const Header = (props) => {
                                     Done
                                 </span>
                             </div>
-                            {listOpen.done && props.done.length === 0 ?
+                            {listOpen.done && notes === 0 ?
                                 <p className='no--item'>No Items in Done.</p> :
                                 <>
                                     {listOpen.done && doneItem}                                </>
@@ -175,7 +182,8 @@ const Header = (props) => {
                                     Trash
                                 </span>
                             </div>
-                            {listOpen.trash && props.del.length === 0 ?
+                            {listOpen.trash &&
+                                notes.length === 0 ?
                                 <p className='no--item'>No Items in Trash.</p> :
                                 <>
                                     {listOpen.trash && trashItem}

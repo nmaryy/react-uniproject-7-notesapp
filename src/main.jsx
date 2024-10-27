@@ -9,7 +9,7 @@ import Settings from './pages/Settings.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import ContextProvider from './assets/ContextProvider.jsx';
-
+import ArrayProvider from './assets/ArrayProvider.jsx';
 
 
 
@@ -35,8 +35,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <ContextProvider>
-    <StrictMode>
-      <RouterProvider router={router} />
-    </StrictMode>,
+    <ArrayProvider>
+      <StrictMode>
+        <RouterProvider router={router} />
+      </StrictMode>,
+    </ArrayProvider>
   </ContextProvider>
 )

@@ -17,11 +17,11 @@ function Settings() {
         setMode(prevMode => !prevMode)
     }
 
-    function profileUploadHandler(event) {
-        setProfileUpload(event.target.value)
-        console.log(profileUpload)
-        console.log(event.target.value)
-    }
+    // function profileUploadHandler(event) {
+    //     setProfileUpload(event.target.value)
+    //     console.log(profileUpload)
+    //     console.log(event.target.value)
+    // }
     useEffect(() => {
         const data = async () => {
             const result = await fetch('https://restcountries.com/v3.1/all')

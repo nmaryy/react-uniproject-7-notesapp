@@ -6,10 +6,11 @@ import Edit from './Edit'
 import Editor from './Editor'
 import Nav from './Nav'
 import { MdOutlineEdit } from "react-icons/md";
-
+import { useArray } from '../assets/ArrayProvider';
 
 const Body = (props) => {
     const { mode } = useMode()
+    const { notes } = useArray()
 
     const [navInput, setNavInput] = useState('')
     const [resultElement, setResultElement] = useState('')
@@ -98,14 +99,17 @@ const Body = (props) => {
                     </div>
 
                     <div className='body--items' >
-                        {props.arr.map(a =>
+                        {notes.map(a =>
+                            a.state === 'pending' &&
                             <div className='body--item' key={a.id}>
                                 <div className='body--item--head'>
                                     <h4>{a.title}</h4>
-                                    <div className='item--date'>{a.month}/{a.day}/{a.year}</div>
+                                    <div className='item--date'>{new Date(a.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                                    {/* <div className='item--date'>{a.date}</div> */}
                                 </div>
 
                                 <p>{a.content}</p>
+
                                 <button className='btn--edit' onClick={() => props.onItemEdit(a)}><i>
                                     <MdOutlineEdit />
                                 </i>

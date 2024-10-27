@@ -1,28 +1,30 @@
 import { useState } from 'react'
 import './Edit.css'
+import { useArray } from '../assets/ArrayProvider';
+
 
 
 const Edit = (props) => {
-    const [formTitle, setFormTitle] = useState(props.editingItem.title)
-    const [formContent, setFormContent] = useState(props.editingItem.content)
+    const [formNewTitle, setFormNewTitle] = useState(props.editingItem.title)
+    const [formNewContent, setFormNewContent] = useState(props.editingItem.content)
     const [disable, setDisable] = useState(true)
-    let date = new Date()
+    const { updateNote } = useArray()
 
-    let month = date.getMonth() + 1
-    let day = date.getDate()
-    let year = date.getFullYear()
-    let hour = date.getHours()
-    if (hour < 10) {
-        hour = 0 + `${hour}`
-    }
-    let minute = date.getMinutes()
-    if (minute < 10) {
-        minute = 0 + `${minute}`
-    }
+    console.log(props.editingItem)
 
     function formHandler(event) {
         event.preventDefault()
-        props.onArrayUpdate(formTitle, formContent, month, day, year, hour, minute, props.editingItem.id)
+        const updatedNote = {
+            title: formNewTitle,
+            content: formNewContent,
+            id: props.editingItem.id
+        }
+        console.log(props.editingItem)
+
+        updateNote(updatedNote)
+        console.log(updatedNote)
+
+        props.onArrayUpdate()
     }
 
 
@@ -40,10 +42,10 @@ const Edit = (props) => {
             <div className="edit--btm">
                 <div className='edit--btm--top'>
                     <div>
-                        <span>{props.editingItem.hour}</span><span>:</span><span>{props.editingItem.minute}</span>
+                        <span>{props.editingItem.time}</span>
                     </div>
                     <div>
-                        <span>{props.editingItem.month}</span><span>/</span><span>{props.editingItem.day}</span><span>/</span><span>{props.editingItem.year}</span>
+                        <span>{props.editingItem.date}</span>
 
                     </div>
                 </div>
@@ -54,19 +56,19 @@ const Edit = (props) => {
                     :
                     <form className='edit--form' onSubmit={formHandler}>
                         <textarea
-                            value={formTitle}
+                            value={formNewTitle}
                             required placeholder='Add your title'
                             className='noteTitle'
                             id='noteTitle' name='noteTitle'
                             autoComplete='off' maxLength={10}
-                            onChange={e => setFormTitle(e.target.value)}
+                            onChange={e => setFormNewTitle(e.target.value)}
                         />
-                        <textarea value={formContent}
+                        <textarea value={formNewContent}
                             required placeholder='Add your note'
                             className='noteContect'
                             id='noteContect' name='noteContect'
                             autoComplete='off' maxLength={546}
-                            onChange={e => setFormContent(e.target.value)}
+                            onChange={e => setFormNewContent(e.target.value)}
                         />
                         <div className="edit--controls">
                             <button type='submit'>Done</button>
