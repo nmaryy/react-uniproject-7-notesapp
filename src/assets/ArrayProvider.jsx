@@ -17,7 +17,6 @@ function ArrayProvider({ children }) {
         if (stringData !== null) {
             const storedNotes = JSON.parse(stringData || [])
             setNotes(storedNotes)
-            console.log(notes)
         }
     }, [])
 
@@ -48,7 +47,6 @@ function ArrayProvider({ children }) {
                     : {
                         ...note,
                         state: 'hidden',
-                        updatedAt: new Date().valueOf(),
                     }
             );
             localStorage.setItem('notes', JSON.stringify(updatedArr));
@@ -64,7 +62,6 @@ function ArrayProvider({ children }) {
                     : {
                         ...note,
                         state: 'done',
-                        updatedAt: new Date().valueOf(),
                     }
             );
             localStorage.setItem('notes', JSON.stringify(updatedArr));
@@ -79,6 +76,21 @@ function ArrayProvider({ children }) {
             return updatedArr;
         });
     };
+    const restoreNote = (restoreNote) => {
+        setNotes(curr => {
+            const RestoredArr = curr.map((note) =>
+                note.id !== restoreNote.id
+                    ? note
+                    : {
+                        ...note,
+                        state: 'pending'
+                    }
+            );
+            localStorage.setItem('notes', JSON.stringify(RestoredArr))
+            return RestoredArr
+        })
+    };
+
 
     const updateNote = (updatedNote) => {
         setNotes((curr) => {
@@ -93,14 +105,14 @@ function ArrayProvider({ children }) {
 
             );
             localStorage.setItem('notes', JSON.stringify(updatedNotes));
-            console.log(updatedNotes)
+            // console.log(updatedNotes)
             return updatedNotes;
         });
     };
 
     return (
         <ArrayContext.Provider value={{
-            notes, addNote, hideNote, doneNote, deleteNote, updateNote
+            notes, addNote, restoreNote, hideNote, doneNote, deleteNote, updateNote
         }}>
             {children}
         </ArrayContext.Provider>

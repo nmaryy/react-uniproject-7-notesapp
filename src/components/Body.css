@@ -95,6 +95,17 @@
 }
 
 
+.results--notfound {
+    background-color: var(--color-primary);
+    box-shadow: 1px 1px 10px var(--color-secondary);
+    border-radius: 5px;
+    position: absolute;
+    top: 6rem;
+    z-index: 100;
+    width: 18rem;
+    padding: 1rem;
+}
+
 .indv--results--overlay {
     height: 5rem;
     padding: 1rem 2rem 1rem 1rem;

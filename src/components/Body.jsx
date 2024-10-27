@@ -14,8 +14,10 @@ const Body = (props) => {
 
     const [navInput, setNavInput] = useState('')
     const [resultElement, setResultElement] = useState('')
-    const resultCondition = resultElement !== null && resultElement.length > 0
-
+    let resultCondition
+    let notFoundCondition
+    // const resultCondition = (navInput !== '' && resultElement.length > 0)
+    // const notFoundCondition = (navInput !== '' && resultElement.length === 0)
 
 
     let card = <div className='body--card'>
@@ -33,21 +35,12 @@ const Body = (props) => {
         </div>
     </div>
 
-    // let arrlength = props.auth && props.arr.length === 0
-    let arrlengthCard =
-        <div className='body--card' >
-            <p>
-                you have zero notes, click Add a new note to begin...
-            </p>
-        </div >
-
-
-
     function navChangeHandler(event) {
         const { value } = event.target
         setNavInput(value)
         if (value.trim() !== '') {
-            setResultElement(() => props.arr.filter(d => d.title.includes(value) || d.content.includes(value)))
+            console.log(navInput)
+            setResultElement(() => notes.filter(d => d.title.includes(value) || d.content.includes(value)))
         } else {
             setResultElement(null)
             setNavInput('')
@@ -60,7 +53,6 @@ const Body = (props) => {
             {props.editShown && <Edit onArrayMake={props.onArrayMake} />}
             {props.editorShown && <Editor editingItem={props.editingItem} onArrayUpdate={props.onArrayUpdate} />}
             <Nav />
-            {/* {arrlength && arrlengthCard} */}
             {!props.auth ? card :
 
                 <div className='body--list'>
@@ -74,7 +66,7 @@ const Body = (props) => {
                         </form>
                     </div>
 
-                    {resultCondition && <div onMouseLeave={() =>
+                    {navInput !== '' && resultElement.length > 0 && <div onMouseLeave={() =>
                         setResultElement(null)
                     }
                         className='results--overlay'>
@@ -90,6 +82,14 @@ const Body = (props) => {
                             </div>
                         )}
                     </div>}
+                    {navInput !== '' && resultElement.length === 0 &&
+                        <div
+                            className='results--notfound'>
+
+                            <p>No results found.</p>
+
+                        </div>
+                    }
 
 
                     <div className='body--nav'>
@@ -99,13 +99,14 @@ const Body = (props) => {
                     </div>
 
                     <div className='body--items' >
-                        {notes.map(a =>
+                        {notes.sort((a, b) =>
+                            b.updatedAt - a.updatedAt
+                        ).map(a =>
                             a.state === 'pending' &&
                             <div className='body--item' key={a.id}>
                                 <div className='body--item--head'>
                                     <h4>{a.title}</h4>
-                                    <div className='item--date'>{new Date(a.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
-                                    {/* <div className='item--date'>{a.date}</div> */}
+                                    <div className='item--date'>{new Date(a.updatedAt).toLocaleDateString()}</div>
                                 </div>
 
                                 <p>{a.content}</p>

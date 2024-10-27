@@ -4,7 +4,6 @@ import Body from './components/Body'
 import Header from './components/Header'
 import Backdrop from './components/Backdrop'
 import { useMode } from './assets/ContextProvider';
-import { useArray } from './assets/ArrayProvider'
 
 function App() {
   const [editShown, setEditShown] = useState(false)
@@ -13,7 +12,6 @@ function App() {
   const [editingItem, setEditingItem] = useState({})
   let auth = true
   const { mode } = useMode()
-  const { notes, setNotes } = useArray();
 
   function editorHandler() {
     setEditShown(!editShown)
@@ -31,28 +29,6 @@ function App() {
 
 
   function ArrayUpdateHandler() {
-    // setArr(oldNotes => {
-    //   const newArr = []
-    //   oldNotes.map((note) => {
-    //     if (note.id === id) {
-    //       newArr.unshift({
-    //         id: id,
-    //         title: formTitle,
-    //         content: formContent,
-    //         month: month,
-    //         day: day,
-    //         year: year,
-    //         hour: hour,
-    //         minute: minute
-    //       })
-
-    //     } else {
-    //       newArr.push(note)
-    //     }
-    //   })
-    //   localStorage.setItem('notes', JSON.stringify(newArr))
-    //   return newArr
-    // })
     setEditorShown(false)
   }
 
@@ -72,7 +48,7 @@ function App() {
     <div className={mode ? 'app' : 'app dark'}>
       {editShown && <Backdrop onClose={editorHandler} />}
       {editorShown && <Backdrop onClose={itemEditHandler} />}
-      <Header onArrayMake={ArrayMakeHandler}
+      <Header
         auth={auth} onEdit={editorHandler}
       // onrestoreTrash={restoreTrashHandler}
       />

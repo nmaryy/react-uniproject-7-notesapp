@@ -10,7 +10,7 @@ const Edit = (props) => {
     const [disable, setDisable] = useState(false)
     const { addNote } = useArray()
 
-    let time = new Date().toLocaleTimeString({ hourCycle: 'h24' })
+    let time = new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit' })
     let date = new Date().toLocaleDateString()
 
     const data = { formTitle, formContent, date, time }

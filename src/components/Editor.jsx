@@ -8,9 +8,8 @@ const Edit = (props) => {
     const [formNewTitle, setFormNewTitle] = useState(props.editingItem.title)
     const [formNewContent, setFormNewContent] = useState(props.editingItem.content)
     const [disable, setDisable] = useState(true)
-    const { updateNote } = useArray()
+    const { notes, updateNote } = useArray()
 
-    console.log(props.editingItem)
 
     function formHandler(event) {
         event.preventDefault()
@@ -19,11 +18,7 @@ const Edit = (props) => {
             content: formNewContent,
             id: props.editingItem.id
         }
-        console.log(props.editingItem)
-
         updateNote(updatedNote)
-        console.log(updatedNote)
-
         props.onArrayUpdate()
     }
 
@@ -42,10 +37,10 @@ const Edit = (props) => {
             <div className="edit--btm">
                 <div className='edit--btm--top'>
                     <div>
-                        <span>{props.editingItem.time}</span>
+                        <span>{new Date(props.editingItem.updatedAt).toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit' })}</span>
                     </div>
                     <div>
-                        <span>{props.editingItem.date}</span>
+                        <span>{new Date(props.editingItem.updatedAt).toLocaleDateString()}</span>
 
                     </div>
                 </div>
