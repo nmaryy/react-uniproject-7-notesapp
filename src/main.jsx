@@ -1,4 +1,4 @@
-import { StrictMode, createContext, useState } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import {
@@ -10,6 +10,7 @@ import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import ContextProvider from './assets/ContextProvider.jsx';
 import ArrayProvider from './assets/ArrayProvider.jsx';
+import ProfileProvider from './assets/ProfileProvider';
 
 
 
@@ -36,9 +37,13 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <ContextProvider>
     <ArrayProvider>
-      <StrictMode>
-        <RouterProvider router={router} />
-      </StrictMode>,
+      <ProfileProvider>
+
+        <StrictMode>
+          <RouterProvider router={router} />
+        </StrictMode>,
+      </ProfileProvider>
+
     </ArrayProvider>
   </ContextProvider>
 )

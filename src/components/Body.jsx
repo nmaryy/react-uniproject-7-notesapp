@@ -7,18 +7,19 @@ import Editor from './Editor'
 import Nav from './Nav'
 import { MdOutlineEdit } from "react-icons/md";
 import { useArray } from '../assets/ArrayProvider';
+import { useProfileContext } from '../assets/ProfileProvider';
+
 
 const Body = (props) => {
     const { mode } = useMode()
     const { notes } = useArray()
+    const { profile } = useProfileContext()
+
 
     const [navInput, setNavInput] = useState('')
-    const [resultElement, setResultElement] = useState('')
-    let resultCondition
-    let notFoundCondition
-    // const resultCondition = (navInput !== '' && resultElement.length > 0)
-    // const notFoundCondition = (navInput !== '' && resultElement.length === 0)
-
+    const [resultElement, setResultElement] = useState([])
+    const foundCondition = (navInput !== '' && resultElement.length > 0)
+    const notFoundCondition = (navInput !== '' && resultElement.length === 0)
 
     let card = <div className='body--card'>
         <h3>
@@ -39,10 +40,9 @@ const Body = (props) => {
         const { value } = event.target
         setNavInput(value)
         if (value.trim() !== '') {
-            console.log(navInput)
             setResultElement(() => notes.filter(d => d.title.includes(value) || d.content.includes(value)))
         } else {
-            setResultElement(null)
+            setResultElement([])
             setNavInput('')
         }
     }
@@ -66,14 +66,17 @@ const Body = (props) => {
                         </form>
                     </div>
 
-                    {navInput !== '' && resultElement.length > 0 && <div onMouseLeave={() =>
-                        setResultElement(null)
+                    {foundCondition && <div onMouseLeave={() => {
+                        setResultElement([])
+                        setNavInput('')
+                    }
                     }
                         className='results--overlay'>
                         {resultElement.map(r =>
+                            r.state === 'pending' &&
                             <div onClick={() => {
                                 props.onItemEdit(r)
-                                setResultElement(null)
+                                setResultElement([])
                                 setNavInput('')
 
                             }} className='indv--results--overlay' key={r.id}>
@@ -82,7 +85,9 @@ const Body = (props) => {
                             </div>
                         )}
                     </div>}
-                    {navInput !== '' && resultElement.length === 0 &&
+
+
+                    {notFoundCondition &&
                         <div
                             className='results--notfound'>
 
@@ -93,7 +98,7 @@ const Body = (props) => {
 
 
                     <div className='body--nav'>
-                        <h4>{`Maryam’s  Notes`}</h4>
+                        <h4>{profile.firstName !== undefined ? `${profile.firstName.toUpperCase()}'s` : 'My'} Notes</h4>
                         <i>{` > `}</i>
                         <p>All Notes</p>
                     </div>

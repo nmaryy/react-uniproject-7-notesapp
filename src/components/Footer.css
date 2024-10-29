@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    height: 5rem;
+    height: 2rem;
     width: 12rem;
     font-size: 10px;
     margin: 0 0 1rem 0;
@@ -146,3 +146,23 @@
         font-size: 8px;
     }
 }
+
+/* @media (min-width:375px) {
+    .footer {
+        left: -2.5rem;
+    }
+
+    .footer--icons {
+        margin-bottom: 0.1rem;
+        font-size: 8px;
+
+    }
+
+    .footer--icons i {
+        margin: 0 0.3rem;
+    }
+
+    .footer p {
+        font-size: 6px;
+    }
+} */

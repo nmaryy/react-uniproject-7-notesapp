@@ -67,3 +67,10 @@
 
     }
 }
+
+/* @media (min-width:375px) {
+    .nav--links {
+        padding: 0.3rem;
+        font-size: 7px;
+    }
+} */

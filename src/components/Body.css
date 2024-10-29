@@ -835,3 +835,58 @@
         font-size: 8px;
     }
 }
+
+/* 
+@media (min-width:375px) {
+    .body--card {
+        margin-top: 3rem;
+        margin-left: 10rem;
+    }
+
+    .body--card h3 {
+        font-size: 12px;
+    }
+
+    .body--card p {
+        margin-block: 1rem;
+        font-size: 10px;
+    }
+
+    .results--overlay {
+        top: 5.5rem;
+        left: 8rem;
+        width: 9rem;
+    }
+
+
+    .indv--results--overlay {
+        height: 2.9rem;
+        padding: 0.4rem 2rem 0.4rem 1rem;
+        width: 9rem;
+    }
+
+    .indv--results--overlay h4 {
+        font-size: 10px;
+    }
+
+    .body--list {
+        margin: 0 0 0 6rem;
+    }
+
+
+    .body--items {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        row-gap: 1.5rem;
+        margin-left: 2.5rem;
+    }
+
+
+    .body--item--head h4 {
+        font-size: 8px;
+    }
+
+
+    .body--item i {
+        font-size: 10px;
+    }
+} */

@@ -32,17 +32,6 @@ function App() {
     setEditorShown(false)
   }
 
-  // function restoreTrashHandler(event, a) {
-  //   event.stopPropagation()
-  //   setArr(prevArr => {
-  //     const updatedArr = [a, ...prevArr]
-  //     localStorage.setItem('notes', JSON.stringify(updatedArr))
-  //     return updatedArr
-  //   })
-  //   setDel(oldNotes =>
-  //     oldNotes.filter(note => note.id !== a.id)
-  //   )
-  // }
 
   return (
     <div className={mode ? 'app' : 'app dark'}>
@@ -50,7 +39,7 @@ function App() {
       {editorShown && <Backdrop onClose={itemEditHandler} />}
       <Header
         auth={auth} onEdit={editorHandler}
-      // onrestoreTrash={restoreTrashHandler}
+        onItemEdit={itemEditHandler}
       />
       <Body onItemEdit={itemEditHandler}
         editingItem={editingItem}

@@ -112,3 +112,14 @@ body .dark {
 
   }
 }
+
+/* 
+@media (min-width:375px) {
+  .banner--img {
+
+    top: 1.5rem;
+    left: 1.5rem;
+
+
+  }
+} */
