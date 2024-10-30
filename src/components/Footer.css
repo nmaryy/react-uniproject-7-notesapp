@@ -1,44 +1,153 @@
 .footer {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     height: 2rem;
-    width: 12rem;
-    font-size: 10px;
-    margin: 0 0 1rem 0;
+    width: 8rem;
+    font-size: 8px;
+    margin: 0;
     position: absolute;
-    bottom: 1rem;
-    left: 1.5rem;
+    bottom: 1.5rem;
+    left: 0;
 }
 
 .footer--icons {
-    display: flex;
-    flex-direction: row;
     margin-bottom: 0.3rem;
-    justify-content: space-evenly;
-    font-size: 12px;
+    font-size: 10px;
 
 }
 
 .footer--icons i {
     color: var(--color-secondary);
     text-decoration: none;
+    margin: 0 0.4rem;
 }
 
 .footer p {
-    margin: 0 1rem;
-    font-size: 10px;
-    display: flex;
+    font-size: 7px;
 }
 
 
-@media (max-width:1536px) {
+@media (min-width:375px) {
+    .footer {
+        left: -0.5rem;
+        bottom: 0.8rem;
+    }
+
+    .footer--icons {
+        margin-bottom: 0.1rem;
+        font-size: 8px;
+
+    }
+
+    .footer--icons i {
+        margin: 0 0.3rem;
+    }
+
+    .footer p {
+        font-size: 6px;
+    }
+}
+
+@media (min-width:640px) {
 
     .footer {
 
-        font-size: 8px;
+        font-size: 10px;
         left: 1rem;
+    }
+
+    .footer--icons {
+        margin-bottom: 0.1rem;
+        font-size: 12px;
+
+    }
+
+    .footer--icons i {
+        margin: 0 0.4rem;
+    }
+
+    .footer p {
+        font-size: 8px;
+    }
+}
+
+
+@media (min-width:768px) {
+
+    .footer {
+        left: 2rem;
+        width: 9rem;
+    }
+
+    .footer--icons {
+        margin-bottom: 0.1rem;
+        font-size: 12px;
+
+    }
+
+    .footer--icons i {
+        margin: 0 0.5rem;
+    }
+
+    .footer p {
+        font-size: 9px;
+    }
+}
+
+
+@media (min-width:1024px) {
+
+    .footer {
+        left: 2.5rem;
+        width: 9rem;
+    }
+
+    .footer--icons {
+        margin-bottom: 0.1rem;
+        font-size: 12px;
+
+    }
+
+    .footer--icons i {
+        margin: 0 0.5rem;
+    }
+
+    .footer p {
+        font-size: 9px;
+    }
+}
+
+
+@media (min-width:1280px) {
+    .footer {
+        left: 2.5rem;
+        width: 9rem;
+    }
+
+    .footer--icons {
+        margin-bottom: 0.1rem;
+        font-size: 12px;
+
+    }
+
+    .footer--icons i {
+        margin: 0 0.5rem;
+    }
+
+    .footer p {
+        font-size: 9px;
+    }
+}
+
+
+@media (min-width:1536px) {
+
+    .footer {
+        left: 1rem;
+        bottom: 1.5rem;
+        width: 12rem;
     }
 
     .footer--icons {
@@ -55,114 +164,3 @@
         font-size: 10px;
     }
 }
-
-@media (max-width:1280px) {
-    .footer {
-
-        font-size: 8px;
-        left: 1rem;
-    }
-
-    .footer--icons {
-        margin-bottom: 0.1rem;
-        font-size: 14px;
-
-    }
-
-    .footer--icons i {
-        margin: 0 0.5rem;
-    }
-
-    .footer p {
-        font-size: 10px;
-    }
-}
-
-@media (max-width:1024px) {
-
-    .footer {
-
-        font-size: 8px;
-        left: 1rem;
-    }
-
-    .footer--icons {
-        margin-bottom: 0.1rem;
-        font-size: 10px;
-
-    }
-
-    .footer--icons i {
-        margin: 0 0.5rem;
-    }
-
-    .footer p {
-        font-size: 8px;
-    }
-}
-
-@media (max-width:768px) {
-
-    .footer {
-
-        font-size: 8px;
-        left: 1rem;
-    }
-
-    .footer--icons {
-        margin-bottom: 0.1rem;
-        font-size: 10px;
-
-    }
-
-    .footer--icons i {
-        margin: 0 0.5rem;
-    }
-
-    .footer p {
-        font-size: 8px;
-    }
-}
-
-@media (max-width:640px) {
-
-    .footer {
-
-        font-size: 8px;
-        left: -1rem;
-    }
-
-    .footer--icons {
-        margin-bottom: 0.1rem;
-        font-size: 10px;
-
-    }
-
-    .footer--icons i {
-        margin: 0 0.4rem;
-    }
-
-    .footer p {
-        font-size: 8px;
-    }
-}
-
-/* @media (min-width:375px) {
-    .footer {
-        left: -2.5rem;
-    }
-
-    .footer--icons {
-        margin-bottom: 0.1rem;
-        font-size: 8px;
-
-    }
-
-    .footer--icons i {
-        margin: 0 0.3rem;
-    }
-
-    .footer p {
-        font-size: 6px;
-    }
-} */

@@ -8,7 +8,6 @@ import { useMode } from './assets/ContextProvider';
 function App() {
   const [editShown, setEditShown] = useState(false)
   const [editorShown, setEditorShown] = useState(false)
-  const [arr, setArr] = useState([])
   const [editingItem, setEditingItem] = useState({})
   let auth = true
   const { mode } = useMode()

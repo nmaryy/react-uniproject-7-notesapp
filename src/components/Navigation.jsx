@@ -8,7 +8,7 @@ const Navigation = () => {
                 Dashboard
             </Link>
             <Link className='nav--links' to='/settings' >
-                Account settings
+                Settings
             </Link>
             <Link className='nav--links' to='/contact'>
                 Contact us

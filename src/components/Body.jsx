@@ -99,7 +99,7 @@ const Body = (props) => {
 
                     <div className='body--nav'>
                         <h4>{profile.firstName !== undefined ? `${profile.firstName.toUpperCase()}'s` : 'My'} Notes</h4>
-                        <i>{` > `}</i>
+                        <i>{`>`}</i>
                         <p>All Notes</p>
                     </div>
 

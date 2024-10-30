@@ -55,7 +55,7 @@ const Edit = (props) => {
                             required placeholder='Add your title'
                             className='noteTitle'
                             id='noteTitle' name='noteTitle'
-                            autoComplete='off' maxLength={10}
+                            autoComplete='off' maxLength={30}
                             onChange={e => setFormNewTitle(e.target.value)}
                         />
                         <textarea value={formNewContent}

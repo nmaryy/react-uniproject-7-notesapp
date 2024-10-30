@@ -41,6 +41,8 @@ function Settings() {
         setFormSaved(true)
     }
 
+    console.log(profile)
+
 
     useEffect(() => {
         const data = async () => {
@@ -110,10 +112,8 @@ function Settings() {
                     </div>
                     <div>
 
-                        <button style={{
-                            backgroundColor: formSaved && 'green'
-                        }}
-                            type='submit' className='settings--save'>{profile === undefined ? 'Save Edits' : 'Saved'}</button>
+                        <button
+                            type='submit' className='settings--save'>{formSaved ? 'Save Edits' : 'Saved'}</button>
                     </div>
                 </form >
                 <button className='settings--sub'>Buy Subscribtion</button>

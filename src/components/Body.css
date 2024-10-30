@@ -1,7 +1,7 @@
 .body {
     display: flex;
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -12,12 +12,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8rem;
-    margin-left: 12rem;
+    margin-top: 6rem;
+    margin-left: 8rem;
+    font-size: 10px;
 }
 
 .body--card p {
-    margin-block: 1rem;
+    margin-block: 0.8rem;
 }
 
 .body--card {
@@ -32,16 +33,21 @@
     color: var(--color-primary);
     border: none;
     cursor: pointer;
-    font-size: 10px;
-    margin-top: 5px;
-    width: 4rem;
-    height: 1.5rem;
+    font-size: 9px;
+    margin-top: 0.6rem;
+    width: 3.5rem;
+    height: 1.4rem;
     border-radius: 2px;
-    margin-right: 5px;
     box-shadow: 1px 1px 10px var(--color-secondary);
 }
 
-.acc-btns:hover {
+.acc-btns:first-of-type {
+    margin-right: 0.8rem;
+}
+
+.acc-btns:hover,
+.acc-btns:focus,
+.acc-btns:active {
     background-color: var(--color-accent);
     color: var(--color-secondary);
 }
@@ -51,16 +57,21 @@
 .body--nav {
     display: flex;
     flex-direction: row;
-    margin-bottom: 1rem;
+    margin-block: 0.5rem 1rem;
     letter-spacing: 1px;
-    justify-content: space-evenly;
-    width: 14rem;
+    justify-content: center;
+    width: 9rem;
+}
+
+.body--nav i {
+    margin-inline: 0.5rem;
 }
 
 .nav--search {
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size: 10px;
 }
 
 .nav--search label {
@@ -68,17 +79,21 @@
     width: 0.8rem;
     flex-direction: row;
     align-items: center;
-    transform: translateX(0.5rem) translateY(1.2rem);
+    transform: translateX(0.5rem) translateY(0.95rem);
     color: var(--color-secondary);
 }
 
+.nav--search input::placeholder {
+    font-size: 8px;
+}
+
 .nav--search input {
-    width: 12rem;
-    height: 1.5rem;
+    width: 9rem;
+    height: 1.2rem;
     border-radius: 10px;
     border: 1px solid var(--color-secondary);
     background-color: var(--color-primary);
-    padding: 0.1rem 0 0.1rem 1.4rem;
+    padding: 0.1rem 0 0.2rem 1.3rem;
     font-size: 10px;
     outline: none;
 
@@ -89,9 +104,9 @@
     box-shadow: 1px 1px 10px var(--color-secondary);
     border-radius: 5px;
     position: absolute;
-    top: 6rem;
+    top: 7rem;
     z-index: 100;
-    width: 18rem;
+    width: 9rem;
 }
 
 
@@ -100,24 +115,29 @@
     box-shadow: 1px 1px 10px var(--color-secondary);
     border-radius: 5px;
     position: absolute;
-    top: 6rem;
+    top: 7rem;
     z-index: 100;
-    width: 18rem;
-    padding: 1rem;
+    width: 9rem;
+    padding: 1.2rem 0.8rem;
+    height: 3.5rem;
 }
 
 .indv--results--overlay {
-    height: 5rem;
-    padding: 1rem 2rem 1rem 1rem;
-    width: 18rem;
+    height: 3.5rem;
+    padding: 0.6rem;
+    width: 9rem;
+}
+
+.indv--results--overlay h4 {
+    width: 4rem;
+    overflow: hidden;
 }
 
 .indv--results--overlay p {
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    font-size: 10px;
-    height: 1rem;
-    width: 14rem;
+    margin-top: 0.3rem;
+    margin-left: 0.8rem;
+    font-size: 8px;
+    width: 6rem;
     overflow: hidden;
 }
 
@@ -125,31 +145,34 @@
     border-bottom: 1px solid var(--color-secondary);
 }
 
-.indv--results--overlay:hover {
+.indv--results--overlay:hover,
+.indv--results--overlay:focus,
+.indv--results--overlay:active {
     text-shadow: 1px 1px 1px var(--color-secondary);
 }
 
 .body--list {
-    margin: 2rem 0 2rem 14rem;
+    margin: 1.5rem 0 2rem 8rem;
     display: flex;
     flex-direction: column;
+    font-size: 10px;
 
 }
 
 
 
 .body--items {
-    padding: 1rem;
+    padding: 0.5rem;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    row-gap: 3rem;
-    margin-left: 6rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    row-gap: 2rem;
+    margin-left: 1.5rem;
 }
 
 .body--item {
     background-color: var(--color-accent);
-    width: 10rem;
-    height: 15rem;
+    width: 9rem;
+    height: 14rem;
     padding: 1rem;
     border-radius: 5px;
     text-overflow: ellipsis;
@@ -166,6 +189,9 @@
 
 .body--item--head h4 {
     text-transform: capitalize;
+    font-size: 10px;
+    width: 3rem;
+    overflow: hidden;
 }
 
 .body--item button {
@@ -192,7 +218,7 @@
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
-    transform: translateX(3rem) translateY(0.5rem);
+    transform: translateX(2.6rem) translateY(1rem);
 }
 
 .btn--edit:hover {
@@ -202,12 +228,12 @@
 
 
 .body--item p {
-    margin-left: 0.5rem;
+    margin-left: 0.4rem;
     line-height: 20px;
-    width: 7rem;
-    height: 5rem;
+    width: 6.2rem;
+    height: 10rem;
     overflow: hidden;
-    font-size: 12px;
+    font-size: 10px;
     margin-top: 0.3rem;
     word-wrap: break-word;
 }
@@ -217,382 +243,79 @@
 }
 
 .item--date {
-    font-size: 10px;
+    font-size: 8px;
 }
 
 
 
-@media (max-width:1536px) {
-
+@media (min-width:375px) {
     .body--card {
-        margin-top: 10rem;
-        margin-left: 12rem;
+        margin-top: 4rem;
+        margin-left: 8rem;
     }
 
     .body--card h3 {
-        font-size: 18px;
-    }
-
-    .body--card p {
-        margin-block: 2rem;
-        font-size: 16px;
-    }
-
-    .acc-btns {
-
-        font-size: 14px;
-        margin-top: 2px;
-        width: 6rem;
-        height: 2.5rem;
-        margin-right: 1.5rem;
-    }
-
-    .body--nav {
-        font-size: 14px;
-        width: 16rem;
-        margin-top: 1rem;
-    }
-
-    .nav--search label {
-        width: 0.9rem;
-        transform: translateX(1.4rem) translateY(1.2rem);
-    }
-
-    .nav--search input {
-        width: 14rem;
-        height: 1.4rem;
         font-size: 12px;
-        margin-left: 1rem;
-
-    }
-
-    .results--overlay {
-
-        top: 8.4rem;
-        left: 17rem;
-        width: 14rem;
-    }
-
-
-    .indv--results--overlay {
-        height: 3.8rem;
-        padding: 0.5rem 2rem 0.5rem 1rem;
-        width: 14rem;
-    }
-
-    .indv--results--overlay h4 {
-        font-size: 14px;
-    }
-
-    .indv--results--overlay p {
-        margin-top: 0.2rem;
-        margin-left: 1rem;
-        font-size: 12px;
-        width: 8rem;
-    }
-
-    .body--list {
-        margin: 0 0 0 14rem;
-    }
-
-
-    .body--items {
-        padding: 0.5rem 1rem;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        row-gap: 2rem;
-        margin-left: 3.5rem;
-    }
-
-    .body--item {
-        width: 10rem;
-        height: 14rem;
-        padding: 1rem;
-        font-size: 12px;
-    }
-
-    .body--item--head h4 {
-        font-size: 14px;
-    }
-
-    .body--item button {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .body--item i {
-        font-size: 16px;
-    }
-
-
-    .btn--edit {
-        transform: translateX(2.5rem) translateY(0.5rem);
-    }
-
-
-    .body--item p {
-        margin-left: 0.5rem;
-        width: 7.5rem;
-        line-height: 1rem;
-        height: 9rem;
-        overflow: hidden;
-        font-size: 12px;
-        margin-top: 1rem;
-    }
-
-    .item--date {
-        font-size: 10px;
-    }
-}
-
-@media (max-width:1280px) {
-
-    .body--card {
-        margin-top: 5rem;
-        margin-left: 14rem;
-    }
-
-    .body--card h3 {
-        font-size: 16px;
-    }
-
-    .body--card p {
-        margin-block: 1.5rem;
-        font-size: 14px;
-    }
-
-    .acc-btns {
-
-        font-size: 12px;
-        margin-top: 2px;
-        width: 5rem;
-        height: 2rem;
-        margin-right: 1rem;
-    }
-
-    .body--nav {
-        font-size: 14px;
-        width: 16rem;
-        margin-top: 1rem;
-    }
-
-    .nav--search label {
-        width: 0.9rem;
-        transform: translateX(1.4rem) translateY(1.2rem);
-    }
-
-    .nav--search input {
-        width: 14rem;
-        height: 1.4rem;
-        font-size: 12px;
-        margin-left: 1rem;
-
-    }
-
-    .results--overlay {
-
-        top: 8.4rem;
-        left: 17rem;
-        width: 14rem;
-    }
-
-
-    .indv--results--overlay {
-        height: 3.8rem;
-        padding: 0.5rem 2rem 0.5rem 1rem;
-        width: 14rem;
-    }
-
-    .indv--results--overlay h4 {
-        font-size: 14px;
-    }
-
-    .indv--results--overlay p {
-        margin-top: 0.2rem;
-        margin-left: 1rem;
-        font-size: 12px;
-        width: 8rem;
-    }
-
-    .body--list {
-        margin: 0 0 0 14rem;
-    }
-
-
-    .body--items {
-        padding: 0.5rem 1rem;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        row-gap: 2rem;
-        margin-left: 3.5rem;
-    }
-
-    .body--item {
-        width: 10rem;
-        height: 14rem;
-        padding: 1rem;
-        font-size: 12px;
-    }
-
-    .body--item--head h4 {
-        font-size: 14px;
-    }
-
-    .body--item button {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    .body--item i {
-        font-size: 16px;
-    }
-
-
-    .btn--edit {
-        transform: translateX(2.5rem) translateY(0.5rem);
-    }
-
-
-    .body--item p {
-        margin-left: 0.5rem;
-        width: 7.5rem;
-        line-height: 1rem;
-        height: 9rem;
-        overflow: hidden;
-        font-size: 12px;
-        margin-top: 1rem;
-    }
-
-    .item--date {
-        font-size: 10px;
-    }
-}
-
-@media (max-width:1024px) {
-
-    .body--card {
-        margin-top: 5rem;
-        margin-left: 14rem;
-    }
-
-    .body--card h3 {
-        font-size: 14px;
     }
 
     .body--card p {
         margin-block: 1rem;
-        font-size: 12px;
-    }
-
-    .acc-btns {
-
-        font-size: 12px;
-        margin-top: 2px;
-        width: 4rem;
-        height: 1.8rem;
-        margin-right: 10px;
-    }
-
-    .body--nav {
-        font-size: 12px;
-        width: 14rem;
-        margin-top: 1rem;
-    }
-
-    .nav--search label {
-        width: 0.7rem;
-        transform: translateX(1.5rem) translateY(1.1rem);
-    }
-
-    .nav--search input {
-        width: 12rem;
-        height: 1.2rem;
         font-size: 10px;
-        margin-left: 1rem;
-
     }
 
     .results--overlay {
-
-        top: 7.6rem;
-        left: 17rem;
-        width: 12rem;
+        top: 6.5rem;
+        left: 8rem;
+        width: 9rem;
     }
 
 
     .indv--results--overlay {
-        height: 3.8rem;
-        padding: 0.5rem 2rem 0.5rem 1rem;
-        width: 12rem;
+        height: 2.9rem;
+        padding: 0.4rem 2rem 0.4rem 1rem;
+        width: 9rem;
     }
 
     .indv--results--overlay h4 {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     .indv--results--overlay p {
-        margin-top: 0.2rem;
-        margin-left: 1rem;
-        font-size: 12px;
-        width: 8rem;
+        width: 5.5rem;
+    }
+
+    .results--notfound {
+        top: 6.5rem;
     }
 
     .body--list {
-        margin: 0 0 0 13rem;
+        margin: 1rem 0 0 7rem;
     }
 
 
     .body--items {
-        padding: 0.5rem 1rem;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        row-gap: 2rem;
-        margin-left: 4rem;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        row-gap: 1.5rem;
+        margin-left: 2.5rem;
     }
 
-    .body--item {
-        width: 9rem;
-        height: 12rem;
-        padding: 1rem;
-        font-size: 12px;
-    }
 
     .body--item--head h4 {
-        font-size: 12px;
+        font-size: 8px;
     }
 
-    .body--item button {
-        width: 2rem;
-        height: 2rem;
-    }
 
     .body--item i {
-        font-size: 14px;
-    }
-
-
-    .btn--edit {
-        transform: translateX(2.5rem) translateY(0.5rem);
-    }
-
-
-    .body--item p {
-        margin-left: 0.5rem;
-        width: 6.5rem;
-        line-height: 1rem;
-        height: 8rem;
-        overflow: hidden;
         font-size: 10px;
-        margin-top: 0.5rem;
-    }
-
-    .item--date {
-        font-size: 8px;
     }
 }
 
-@media (max-width:768px) {
+
+@media (min-width:640px) {
 
     .body--card {
-        margin-top: 3rem;
-        margin-left: 14rem;
+        margin-top: 5rem;
+        margin-left: 10rem;
     }
 
     .body--card h3 {
@@ -610,130 +333,6 @@
         margin-top: 2px;
         width: 4rem;
         height: 1.5rem;
-        margin-right: 10px;
-    }
-
-    .body--nav {
-        font-size: 10px;
-        width: 10rem;
-        margin-top: 1rem;
-    }
-
-    .nav--search label {
-        width: 0.7rem;
-        transform: translateX(0.5rem) translateY(1.1rem);
-    }
-
-    .nav--search input {
-        width: 10rem;
-        height: 1.2rem;
-        font-size: 10px;
-        margin-left: 0;
-
-    }
-
-    .results--overlay {
-
-        top: 7.4rem;
-        width: 10rem;
-    }
-
-
-    .indv--results--overlay {
-        height: 3rem;
-        padding: 0.5rem 2rem 0.2rem 1rem;
-        width: 10rem;
-    }
-
-    .indv--results--overlay h4 {
-        font-size: 12px;
-    }
-
-    .indv--results--overlay p {
-        margin-top: 0.2rem;
-        margin-left: 1rem;
-        font-size: 10px;
-        width: 7rem;
-    }
-
-    .body--list {
-        margin: 0 0 0 14rem;
-    }
-
-
-    .body--items {
-        padding: 0.5rem 1rem;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 2rem;
-        margin-left: 4rem;
-    }
-
-    .body--item {
-        background-color: var(--color-accent);
-        width: 8rem;
-        height: 11rem;
-        padding: 0.5rem;
-        font-size: 10px;
-    }
-
-    .body--item--head h4 {
-        font-size: 10px;
-    }
-
-    .body--item button {
-        width: 1.8rem;
-        height: 1.8rem;
-    }
-
-    .body--item i {
-        font-size: 12px;
-    }
-
-
-    .btn--edit {
-        width: 1rem;
-        height: 1rem;
-        transform: translateX(2.5rem) translateY(0.5rem);
-    }
-
-
-    .body--item p {
-        margin-left: 0.5rem;
-        width: 6rem;
-        line-height: 1rem;
-        height: 8rem;
-        overflow: hidden;
-        font-size: 8px;
-        margin-top: 0.3rem;
-    }
-
-    .item--date {
-        font-size: 8px;
-    }
-}
-
-@media (max-width:640px) {
-
-    .body--card {
-        margin-top: 3rem;
-        margin-left: 10rem;
-    }
-
-    .body--card h3 {
-        font-size: 12px;
-    }
-
-    .body--card p {
-        margin-block: 1rem;
-        font-size: 10px;
-    }
-
-    .acc-btns {
-
-        font-size: 8px;
-        margin-top: 2px;
-        width: 4rem;
-        height: 1.2rem;
         margin-right: 5px;
     }
 
@@ -836,57 +435,506 @@
     }
 }
 
-/* 
-@media (min-width:375px) {
+
+@media (min-width:768px) {
+
     .body--card {
-        margin-top: 3rem;
-        margin-left: 10rem;
+        margin-top: 5rem;
+        margin-left: 13rem;
     }
 
-    .body--card h3 {
-        font-size: 12px;
-    }
-
-    .body--card p {
-        margin-block: 1rem;
+    .body--nav {
         font-size: 10px;
+        width: 10rem;
+        margin-top: 1rem;
+    }
+
+    .nav--search label {
+        width: 0.6rem;
+        transform: translateX(0.5rem) translateY(1.1rem);
+    }
+
+    .nav--search input {
+        width: 9rem;
+        height: 1.2rem;
+        font-size: 8px;
+        margin-left: 0;
+
     }
 
     .results--overlay {
-        top: 5.5rem;
-        left: 8rem;
+
+        top: 7.2rem;
         width: 9rem;
     }
 
 
     .indv--results--overlay {
-        height: 2.9rem;
-        padding: 0.4rem 2rem 0.4rem 1rem;
+        height: 2.5rem;
+        padding: 0.2rem 2rem 0.2rem 1rem;
         width: 9rem;
     }
 
     .indv--results--overlay h4 {
-        font-size: 10px;
+        font-size: 12px;
+    }
+
+    .indv--results--overlay p {
+        margin-top: 0.1rem;
+        margin-left: 1rem;
+        font-size: 8px;
+        width: 7rem;
     }
 
     .body--list {
-        margin: 0 0 0 6rem;
+        margin: 0 0 0 14rem;
     }
 
 
     .body--items {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        row-gap: 1.5rem;
-        margin-left: 2.5rem;
+        padding: 0.5rem 1rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 2rem;
+        margin-left: 2rem;
     }
 
-
-    .body--item--head h4 {
-        font-size: 8px;
-    }
-
-
-    .body--item i {
+    .body--item {
+        background-color: var(--color-accent);
+        width: 7rem;
+        height: 10rem;
+        padding: 0.5rem;
         font-size: 10px;
     }
-} */
+
+    .body--item--head h4 {
+        font-size: 10px;
+    }
+
+    .body--item button {
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
+    .body--item i {
+        font-size: 12px;
+    }
+
+
+    .btn--edit {
+        width: 1rem;
+        height: 1rem;
+        transform: translateX(2.2rem) translateY(0.1rem);
+    }
+
+
+    .body--item p {
+        margin-left: 0.5rem;
+        width: 5rem;
+        line-height: 1rem;
+        height: 7.5rem;
+        overflow: hidden;
+        font-size: 8px;
+        margin-top: 0.3rem;
+    }
+
+    .item--date {
+        font-size: 8px;
+    }
+}
+
+
+@media (min-width:1024px) {
+
+    .body--card {
+        margin-top: 5rem;
+        margin-left: 14rem;
+        line-height: 1rem;
+    }
+
+    .body--card h3 {
+        font-size: 14px;
+    }
+
+    .body--card p {
+        margin-block: 1rem;
+        font-size: 12px;
+    }
+
+    .acc-btns {
+
+        font-size: 12px;
+        margin-top: 2px;
+        width: 4rem;
+        height: 1.8rem;
+        margin-right: 10px;
+    }
+
+    .body--nav {
+        font-size: 12px;
+        width: 14rem;
+        margin-top: 1rem;
+        letter-spacing: 4px;
+        margin-left: 1.5rem;
+
+    }
+
+    .nav--search label {
+        width: 0.8rem;
+        font-size: 12px;
+        transform: translateX(2.9rem) translateY(1.1rem);
+    }
+
+    .nav--search input {
+        width: 12rem;
+        height: 1.4rem;
+        font-size: 10px;
+        margin-left: 2.5rem;
+
+    }
+
+    .nav--search input::placeholder {
+        font-size: 10px;
+    }
+
+    .results--overlay {
+        top: 9.8rem;
+        left: 16.5rem;
+        width: 12rem;
+    }
+
+
+    .indv--results--overlay {
+        height: 3.8rem;
+        padding: 0.5rem 2rem 0.5rem 1rem;
+        width: 12rem;
+    }
+
+    .indv--results--overlay h4 {
+        font-size: 12px;
+        width: 6rem;
+        margin-top: 0.2rem;
+    }
+
+    .indv--results--overlay p {
+        margin-top: 0.2rem;
+        margin-left: 1rem;
+        font-size: 10px;
+        width: 8rem;
+    }
+
+    .body--list {
+        margin: 0 0 0 13rem;
+    }
+
+
+    .body--items {
+        padding: 0.5rem 1rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 2.5rem;
+        margin-left: 4rem;
+    }
+
+    .body--item {
+        width: 9rem;
+        height: 12rem;
+        padding: 1rem;
+        font-size: 12px;
+    }
+
+    .body--item--head h4 {
+        font-size: 12px;
+    }
+
+    .body--item button {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .body--item i {
+        font-size: 14px;
+    }
+
+
+    .btn--edit {
+        transform: translateX(2.5rem) translateY(0.5rem);
+    }
+
+
+    .body--item p {
+        margin-left: 0.5rem;
+        width: 6.5rem;
+        line-height: 1rem;
+        height: 8rem;
+        overflow: hidden;
+        font-size: 10px;
+        margin-top: 0.5rem;
+    }
+
+    .item--date {
+        font-size: 9px;
+    }
+}
+
+@media (min-width:1280px) {
+
+    .body--card {
+        margin-top: 8rem;
+        margin-left: 15rem;
+        letter-spacing: 1.5px;
+    }
+
+    .body--card h3 {
+        font-size: 16px;
+    }
+
+    .body--card p {
+        margin-block: 1.5rem;
+        font-size: 14px;
+    }
+
+    .acc-btns {
+
+        font-size: 12px;
+        margin-top: 2px;
+        width: 5rem;
+        height: 2rem;
+        margin-right: 1rem;
+    }
+
+    .body--nav {
+        font-size: 14px;
+        width: 16rem;
+        margin-top: 1rem;
+    }
+
+    .nav--search label {
+        width: 0.9rem;
+        transform: translateX(2.8rem) translateY(1.1rem);
+    }
+
+    .nav--search input {
+        width: 14rem;
+        height: 1.4rem;
+        font-size: 12px;
+        margin-left: 2.5rem;
+
+    }
+
+    .results--overlay {
+
+        top: 10.4rem;
+        left: 17.5rem;
+        width: 14rem;
+    }
+
+
+    .results--notfound {
+        top: 10.4rem;
+        left: 17.5rem;
+        width: 14rem;
+    }
+
+    .indv--results--overlay {
+        height: 3.8rem;
+        padding: 0.5rem 2rem 0.5rem 1rem;
+        width: 14rem;
+    }
+
+    .indv--results--overlay h4 {
+        font-size: 14px;
+    }
+
+    .indv--results--overlay p {
+        margin-top: 0.2rem;
+        margin-left: 1rem;
+        font-size: 12px;
+        width: 8rem;
+    }
+
+    .body--list {
+        margin: 0 0 0 14rem;
+    }
+
+
+    .body--items {
+        padding: 0.5rem 1rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 2rem;
+        margin-left: 3.5rem;
+    }
+
+    .body--item {
+        width: 10rem;
+        height: 14rem;
+        padding: 1rem;
+        font-size: 12px;
+    }
+
+    .body--item--head h4 {
+        font-size: 14px;
+    }
+
+    .body--item button {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .body--item i {
+        font-size: 16px;
+    }
+
+
+    .btn--edit {
+        transform: translateX(2.5rem) translateY(0.5rem);
+    }
+
+
+    .body--item p {
+        margin-left: 0.5rem;
+        width: 7.5rem;
+        line-height: 1rem;
+        height: 9rem;
+        overflow: hidden;
+        font-size: 12px;
+        margin-top: 1rem;
+    }
+
+    .item--date {
+        font-size: 10px;
+    }
+}
+
+@media (min-width:1536px) {
+
+    .body--card {
+        margin-top: 10rem;
+        margin-left: 12rem;
+    }
+
+    .body--card h3 {
+        font-size: 18px;
+    }
+
+    .body--card p {
+        margin-block: 2rem;
+        font-size: 16px;
+    }
+
+    .acc-btns {
+
+        font-size: 14px;
+        margin-top: 2px;
+        width: 6rem;
+        height: 2.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .body--nav {
+        font-size: 16px;
+        width: 16rem;
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+
+    .nav--search label {
+        width: 1rem;
+        font-size: 16px;
+        transform: translateX(2.8rem) translateY(1.4rem);
+    }
+
+    .nav--search input {
+        width: 18rem;
+        height: 1.8rem;
+        font-size: 14px;
+        margin-left: 2.1rem;
+        border-radius: 20px;
+        padding-left: 2rem;
+
+    }
+
+    .results--overlay {
+
+        top: 13.3rem;
+        left: 17.1rem;
+        width: 18rem;
+    }
+
+    .results--notfound {
+        top: 13.3rem;
+        left: 17.1rem;
+        width: 18rem;
+        height: 5rem;
+        font-size: 12px;
+        padding: 2rem;
+    }
+
+    .indv--results--overlay {
+        height: 5rem;
+        padding: 1rem 2rem 1rem 1rem;
+        width: 18rem;
+    }
+
+    .indv--results--overlay h4 {
+        font-size: 14px;
+        width: 8rem;
+    }
+
+    .indv--results--overlay p {
+        margin-top: 0.2rem;
+        margin-left: 1rem;
+        font-size: 12px;
+        width: 14rem;
+    }
+
+    .body--list {
+        margin: 0 0 0 14rem;
+    }
+
+
+    .body--items {
+        padding: 0.5rem 1rem;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        row-gap: 2rem;
+        margin-left: 3.5rem;
+    }
+
+    .body--item {
+        width: 10rem;
+        height: 14rem;
+        padding: 1rem;
+        font-size: 12px;
+    }
+
+    .body--item--head h4 {
+        font-size: 14px;
+    }
+
+    .body--item button {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .body--item i {
+        font-size: 16px;
+    }
+
+
+    .btn--edit {
+        transform: translateX(2.5rem) translateY(0.5rem);
+    }
+
+
+    .body--item p {
+        margin-left: 0.5rem;
+        width: 7.5rem;
+        line-height: 1rem;
+        height: 9rem;
+        overflow: hidden;
+        font-size: 12px;
+        margin-top: 1rem;
+    }
+
+    .item--date {
+        font-size: 10px;
+    }
+}

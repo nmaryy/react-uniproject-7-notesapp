@@ -8,7 +8,7 @@ export function useProfileContext() {
 }
 
 function ProfileProvider({ children }) {
-    const [profile, setProfile] = useState(true)
+    const [profile, setProfile] = useState('')
     useEffect(() => {
         const profileData = localStorage.getItem('profile')
         if (profileData !== null) {

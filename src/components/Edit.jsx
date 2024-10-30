@@ -54,7 +54,7 @@ const Edit = (props) => {
                             className='noteTitle'
                             id='noteTitle' name='noteTitle'
                             autoFocus
-                            autoComplete='off' maxLength={10}
+                            autoComplete='off' maxLength={30}
                             onChange={e => setFormTitle(e.target.value)}
                         />
                         <textarea value={formContent}

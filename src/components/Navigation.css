@@ -1,11 +1,9 @@
 .navigation {
     color: var(--color-secondary);
-    z-index: 100;
-    border-radius: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    width: 20rem;
 }
 
 .nav--links {
@@ -13,8 +11,8 @@
     color: var(--color-secondary);
     margin: 0;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    font-size: 12px;
+    padding: 0 0.5rem 0 0;
+    font-size: 8px;
 }
 
 
@@ -26,15 +24,50 @@
     text-shadow: 1px 1px 1px var(--color-secondary);
 }
 
-@media (max-width:1536px) {
 
+@media (min-width:375px) {
     .nav--links {
-        padding: 1.5rem;
-        font-size: 16px;
+        padding: 0.3rem;
+        font-size: 7px;
     }
 }
 
-@media (max-width:1280px) {
+
+@media (min-width:640px) {
+
+    .nav--links {
+        padding: 0.5rem;
+        font-size: 10px;
+    }
+}
+
+@media (min-width:768px) {
+    .navigation {
+        width: 40rem;
+    }
+
+    .nav--links {
+        padding: 0.5rem;
+        font-size: 12px;
+        margin-left: 1.5rem;
+    }
+}
+
+
+@media (min-width:1024px) {
+    .navigation {
+        width: 40rem;
+    }
+
+    .nav--links {
+        padding: 0.5rem;
+        font-size: 12px;
+        margin-left: 1.2rem;
+    }
+}
+
+
+@media (min-width:1280px) {
 
     .nav--links {
         font-size: 14px;
@@ -42,35 +75,10 @@
     }
 }
 
-@media (max-width:1024px) {
+@media (min-width:1536px) {
 
     .nav--links {
-        font-size: 12px;
-        padding: 1rem;
+        padding: 1.2rem;
+        font-size: 16px;
     }
 }
-
-@media (max-width:768px) {
-
-    .nav--links {
-        font-size: 10px;
-        padding: 0.5rem;
-    }
-}
-
-@media (max-width:640px) {
-
-    .nav--links {
-        padding: 0.5rem;
-        font-size: 8px;
-
-
-    }
-}
-
-/* @media (min-width:375px) {
-    .nav--links {
-        padding: 0.3rem;
-        font-size: 7px;
-    }
-} */
