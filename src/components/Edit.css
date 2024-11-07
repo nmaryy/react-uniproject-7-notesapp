@@ -39,7 +39,7 @@
     display: flex;
     flex-direction: row;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-right: 0.2rem;
     justify-content: center;
     align-items: center;
@@ -134,13 +134,13 @@ form ::placeholder {
     padding: 0.5rem;
     display: flex;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     margin: 0.6rem 0 0 0;
     justify-content: center;
     align-items: center;
     background-color: var(--color-accent);
     color: var(--color-secondary);
-    box-shadow: 1px 1px 5px var(--color-secondary);
+    box-shadow: 0.5px -0.5px 3px var(--color-secondary);
     font-size: 10px;
 }
 
@@ -199,7 +199,6 @@ form ::placeholder {
     .edit--top button {
         height: 1.5rem;
         padding: 0.5rem;
-        border-radius: 5px;
         margin-right: 0.2rem;
     }
 
@@ -269,15 +268,7 @@ form ::placeholder {
         width: 3rem;
         height: 1.5rem;
         padding: 0.5rem;
-        display: flex;
-        border: none;
-        border-radius: 5px;
         margin: 0.6rem 0 0 0;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--color-accent);
-        color: var(--color-secondary);
-        box-shadow: 1px 1px 5px var(--color-secondary);
         font-size: 10px;
     }
 }
@@ -449,7 +440,6 @@ form ::placeholder {
         padding: 0.8rem;
         margin-right: 0.3rem;
         font-size: 10px;
-        border: 1px solid var(--color-secondary);
     }
 
     .edit--btm {

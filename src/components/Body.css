@@ -106,6 +106,9 @@
     top: 7rem;
     z-index: 100;
     width: 9rem;
+    max-height: 20rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 
@@ -151,7 +154,7 @@
 }
 
 .body--list {
-    margin: 1.5rem 0 2rem 8rem;
+    margin: 1.5rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     font-size: 10px;
@@ -248,6 +251,10 @@
 
 
 @media (min-width:375px) {
+    .body {
+        padding-left: 0;
+    }
+
     .body--card {
         margin-top: 4rem;
         margin-left: 8rem;
@@ -264,7 +271,7 @@
 
     .results--overlay {
         top: 7rem;
-        left: 8rem;
+        left: 8.5rem;
         width: 9rem;
     }
 
@@ -291,14 +298,14 @@
     }
 
     .body--list {
-        margin: 1rem 0 0 7rem;
+        margin: 1rem 0 0 0;
     }
 
 
     .body--items {
         grid-template-columns: repeat(1, minmax(0, 1fr));
         row-gap: 1.5rem;
-        margin-left: 2.5rem;
+        margin-left: 0.5rem;
     }
 
 
@@ -358,8 +365,8 @@
     }
 
     .results--overlay {
-        left: 11rem;
-        top: 7.2rem;
+        left: 8rem;
+        top: 6.8rem;
         width: 9rem;
     }
 
@@ -388,7 +395,7 @@
     }
 
     .body--list {
-        margin: 0 0 0 10rem;
+        margin: 0 0 0 0;
     }
 
 
@@ -471,7 +478,7 @@
     }
 
     .results--overlay {
-        left: 15rem;
+        left: 10.2rem;
         top: 8.8rem;
         width: 9rem;
     }
@@ -502,7 +509,7 @@
     }
 
     .body--list {
-        margin: 0 0 0 14rem;
+        margin: 0 0 0 0;
     }
 
 
@@ -614,13 +621,13 @@
 
     .results--overlay {
         top: 9.3rem;
-        left: 16.5rem;
+        left: 15.3rem;
         width: 12rem;
     }
 
     .results--notfound {
         top: 9.3rem;
-        left: 16.5rem;
+        left: 15.5rem;
         width: 12rem;
         padding: 1.2rem 0.8rem;
         height: 3.5rem;
@@ -648,7 +655,7 @@
     }
 
     .body--list {
-        margin: 0 0 0 13rem;
+        margin: 0 0 0 0;
     }
 
 
@@ -734,14 +741,15 @@
 
     .nav--search label {
         width: 0.9rem;
-        transform: translateX(2.9rem) translateY(1.1rem);
+        transform: translateX(2.9rem) translateY(1.2rem);
     }
 
     .nav--search input {
         width: 14rem;
-        height: 1.4rem;
+        height: 1.7rem;
         font-size: 12px;
         margin-left: 2.5rem;
+        border-radius: 20px;
         padding: 0.1rem 0 0.19rem 1.5rem;
 
     }
@@ -778,7 +786,7 @@
     }
 
     .body--list {
-        margin: 0 0 0 14rem;
+        margin: 0 0 0 0;
     }
 
 
@@ -856,7 +864,7 @@
     }
 
     .body--nav {
-        font-size: 16px;
+        font-size: 14px;
         width: 16rem;
         margin-top: 1rem;
         margin-left: 2rem;
@@ -919,7 +927,7 @@
     }
 
     .body--list {
-        margin: 0 0 0 14rem;
+        margin: 0 0 0 0rem;
     }
 
 

@@ -2,7 +2,15 @@
     width: 100%;
     background-color: var(--color-secondary);
     opacity: 0.6;
-    min-height: 100vh;
+    min-height: 100%;
     position: fixed;
     z-index: 100;
+}
+
+
+@media (min-width : 375px) {
+    .backdrop {
+        position: fixed;
+        min-height: 100vh;
+    }
 }

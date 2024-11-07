@@ -10,11 +10,6 @@ export function useMode() {
 function ContextProvider({ children }) {
     const [appMode, setAppMode] = useState(null)
 
-    function modeHandler() {
-        setAppMode(prevMode => !prevMode)
-        localStorage.setItem('mode', appMode)
-    }
-
     useEffect(() => {
         const mode = localStorage.getItem('mode')
         if (mode !== null) {
@@ -23,6 +18,16 @@ function ContextProvider({ children }) {
             setAppMode(true)
         }
     }, [])
+
+    function modeHandler() {
+        setAppMode((prevMode) => {
+            const currMode = !prevMode
+            localStorage.setItem('mode', JSON.stringify(currMode))
+            return currMode
+        }
+        )
+    }
+
 
 
     return (

@@ -4,7 +4,6 @@
     justify-content: flex-start;
     align-items: center;
     width: 8rem;
-    position: absolute;
     font-size: 8px;
     padding: 5rem 0 1rem 0;
 
@@ -156,7 +155,6 @@
 .header--btm {
     display: flex;
     flex-direction: column;
-    padding-left: 0.2rem;
     margin-top: 0.5rem;
     margin-left: 0;
     padding-bottom: 1rem;
@@ -196,7 +194,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0.2rem 0.4rem 0.4rem 2rem;
+    margin: 0.2rem 0 0.4rem 2rem;
 
 }
 
@@ -233,8 +231,7 @@
 .header button:hover,
 .header button:focus,
 .header button:active {
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
+    background-color: var(--color-accent);
 }
 
 
@@ -259,8 +256,7 @@
 .header--middle--add .add-btn:hover,
 .header--middle--add .add-btn:focus,
 .header--middle--add .add-btn:active {
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
+    background-color: var(--color-accent);
 }
 
 
@@ -314,7 +310,7 @@
     }
 
     .header {
-        width: 8rem;
+        width: 12rem;
         padding: 4.5rem 0.5rem 1rem 0.5rem;
 
     }
@@ -353,6 +349,20 @@
         width: 1rem;
         height: 1rem;
         font-size: 0.6rem;
+        margin-left: 0.5rem;
+        margin-right: 0.3rem;
+
+    }
+
+    .header--middle--add {
+        font-size: 8px;
+        margin-right: 0;
+    }
+
+
+    .header--middle--acc img {
+        height: 2rem;
+        width: 2rem;
     }
 
     .header .header--desc {
@@ -364,6 +374,14 @@
     .header .header--desc p {
         margin-top: 0.5rem;
         width: 5rem;
+    }
+
+    .button--title--parent {
+        font-size: 9px;
+        margin-top: 0.5rem;
+        width: 5rem;
+        margin-right: 0.5rem;
+        margin-left: 1.5rem;
     }
 }
 
@@ -574,7 +592,7 @@
     }
 
     .header {
-        width: 14rem;
+        width: 16rem;
         font-size: 10px;
         padding: 7.5rem 0 1rem 0.5rem;
 
@@ -593,6 +611,7 @@
 
     .header--middle--add {
         font-size: 10px;
+        margin-right: 1rem;
     }
 
     .header--btm {
@@ -669,7 +688,7 @@
     }
 
     .header {
-        width: 14rem;
+        width: 18rem;
         font-size: 10px;
         padding: 8.5rem 0 1rem 0.5rem;
 
@@ -771,7 +790,7 @@
     }
 
     .header {
-        width: 14rem;
+        width: 18rem;
         font-size: 12px;
         padding: 9.5rem 0 1rem 1rem;
 
@@ -789,7 +808,7 @@
 
 
     .header--middle--add {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .header--btm {
@@ -804,7 +823,7 @@
 
     .order--plus {
         font-weight: 500;
-        font-size: 14px;
+        font-size: 12px;
     }
 
 

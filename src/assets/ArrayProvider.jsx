@@ -33,7 +33,6 @@ function ArrayProvider({ children }) {
 
         setNotes((curr) => {
             const newNotes = [note, ...curr];
-            console.log(newNotes);
             localStorage.setItem('notes', JSON.stringify(newNotes));
             return newNotes;
         });
