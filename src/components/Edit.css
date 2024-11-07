@@ -23,7 +23,6 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 14px;
 }
 
 
@@ -99,11 +98,6 @@
     resize: none;
     font-size: 10px;
 
-}
-
-
-textarea:invalid {
-    border: 1px dotted var(--color-secondary);
 }
 
 
@@ -205,15 +199,8 @@ form ::placeholder {
     .edit--top button {
         height: 1.5rem;
         padding: 0.5rem;
-        display: flex;
-        flex-direction: row;
-        border: none;
         border-radius: 5px;
         margin-right: 0.2rem;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid var(--color-secondary);
-        color: var(--color-secondary);
     }
 
     .edit--state button {
@@ -264,7 +251,7 @@ form ::placeholder {
     .form--preview {
         display: flex;
         flex-direction: column;
-        padding: 0.5rem;
+        padding: 1rem;
     }
 
     .form--preview h3 {
@@ -318,7 +305,6 @@ form ::placeholder {
         padding: 0.5rem;
         margin-right: 0.4rem;
         font-size: 8px;
-        border: 1px solid var(--color-secondary);
     }
 
     .edit--btm {
@@ -463,7 +449,7 @@ form ::placeholder {
         padding: 0.8rem;
         margin-right: 0.3rem;
         font-size: 10px;
-        border: 2px solid var(--color-secondary);
+        border: 1px solid var(--color-secondary);
     }
 
     .edit--btm {
@@ -539,7 +525,6 @@ form ::placeholder {
         padding: 0.8rem;
         margin-right: 0.3rem;
         font-size: 10px;
-        border: 2px solid var(--color-secondary);
     }
 
     .edit--btm {
@@ -614,7 +599,6 @@ form ::placeholder {
         padding: 0.8rem;
         margin-right: 0.3rem;
         font-size: 10px;
-        border: 2px solid var(--color-secondary);
     }
 
     .edit--btm {

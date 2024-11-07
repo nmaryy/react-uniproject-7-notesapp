@@ -4,7 +4,6 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    overflow: auto;
 }
 
 
@@ -91,8 +90,8 @@
     width: 9rem;
     height: 1.2rem;
     border-radius: 10px;
-    border: 1px solid var(--color-secondary);
-    background-color: var(--color-primary);
+    border: none;
+    background-color: var(--color-accent);
     padding: 0.1rem 0 0.2rem 1.3rem;
     font-size: 10px;
     outline: none;
@@ -174,7 +173,7 @@
     width: 9rem;
     height: 14rem;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 2px;
     text-overflow: ellipsis;
 
 }
@@ -264,11 +263,18 @@
     }
 
     .results--overlay {
-        top: 6.5rem;
+        top: 7rem;
         left: 8rem;
         width: 9rem;
     }
 
+
+    .results--notfound {
+        top: 7rem;
+        width: 9rem;
+        padding: 0.8rem 0.8rem;
+        height: 2.5rem;
+    }
 
     .indv--results--overlay {
         height: 2.9rem;
@@ -282,10 +288,6 @@
 
     .indv--results--overlay p {
         width: 5.5rem;
-    }
-
-    .results--notfound {
-        top: 6.5rem;
     }
 
     .body--list {
@@ -344,7 +346,6 @@
 
     .nav--search label {
         width: 0.6rem;
-        transform: translateX(0.5rem) translateY(1.1rem);
     }
 
     .nav--search input {
@@ -352,15 +353,22 @@
         height: 1.2rem;
         font-size: 8px;
         margin-left: 0;
+        padding: 0.1rem 0 0.1rem 1.3rem;
 
     }
 
     .results--overlay {
-
+        left: 11rem;
         top: 7.2rem;
         width: 9rem;
     }
 
+    .results--notfound {
+        top: 7.2rem;
+        width: 9rem;
+        padding: 0.8rem 0.8rem;
+        height: 2.5rem;
+    }
 
     .indv--results--overlay {
         height: 2.5rem;
@@ -425,7 +433,7 @@
         width: 5rem;
         line-height: 1rem;
         height: 7.5rem;
-        overflow: hidden;
+
         font-size: 8px;
         margin-top: 0.3rem;
     }
@@ -451,7 +459,7 @@
 
     .nav--search label {
         width: 0.6rem;
-        transform: translateX(0.5rem) translateY(1.1rem);
+        transform: translateX(0.5rem) translateY(1rem);
     }
 
     .nav--search input {
@@ -463,11 +471,18 @@
     }
 
     .results--overlay {
-
-        top: 7.2rem;
+        left: 15rem;
+        top: 8.8rem;
         width: 9rem;
     }
 
+
+    .results--notfound {
+        top: 8.8rem;
+        width: 9rem;
+        padding: 0.8rem 0.8rem;
+        height: 2.5rem;
+    }
 
     .indv--results--overlay {
         height: 2.5rem;
@@ -532,7 +547,7 @@
         width: 5rem;
         line-height: 1rem;
         height: 7.5rem;
-        overflow: hidden;
+
         font-size: 8px;
         margin-top: 0.3rem;
     }
@@ -589,6 +604,7 @@
         height: 1.4rem;
         font-size: 10px;
         margin-left: 2.5rem;
+        padding: 0.1rem 0 0.15rem 1.3rem;
 
     }
 
@@ -597,9 +613,18 @@
     }
 
     .results--overlay {
-        top: 9.8rem;
+        top: 9.3rem;
         left: 16.5rem;
         width: 12rem;
+    }
+
+    .results--notfound {
+        top: 9.3rem;
+        left: 16.5rem;
+        width: 12rem;
+        padding: 1.2rem 0.8rem;
+        height: 3.5rem;
+        font-size: 13px;
     }
 
 
@@ -665,7 +690,7 @@
         width: 6.5rem;
         line-height: 1rem;
         height: 8rem;
-        overflow: hidden;
+
         font-size: 10px;
         margin-top: 0.5rem;
     }
@@ -709,7 +734,7 @@
 
     .nav--search label {
         width: 0.9rem;
-        transform: translateX(2.8rem) translateY(1.1rem);
+        transform: translateX(2.9rem) translateY(1.1rem);
     }
 
     .nav--search input {
@@ -717,19 +742,20 @@
         height: 1.4rem;
         font-size: 12px;
         margin-left: 2.5rem;
+        padding: 0.1rem 0 0.19rem 1.5rem;
 
     }
 
     .results--overlay {
 
-        top: 10.4rem;
+        top: 10.1rem;
         left: 17.5rem;
         width: 14rem;
     }
 
 
     .results--notfound {
-        top: 10.4rem;
+        top: 10.1rem;
         left: 17.5rem;
         width: 14rem;
     }
@@ -794,7 +820,7 @@
         width: 7.5rem;
         line-height: 1rem;
         height: 9rem;
-        overflow: hidden;
+
         font-size: 12px;
         margin-top: 1rem;
     }
@@ -848,23 +874,29 @@
         font-size: 14px;
         margin-left: 2.1rem;
         border-radius: 20px;
-        padding-left: 2rem;
+        font-size: 14px;
+        padding: 0.1rem 0 0.3rem 2rem;
 
+    }
+
+
+    .nav--search input::placeholder {
+        font-size: 12px;
     }
 
     .results--overlay {
 
-        top: 13.3rem;
+        top: 10.2rem;
         left: 17.1rem;
         width: 18rem;
     }
 
     .results--notfound {
-        top: 13.3rem;
+        top: 10.2rem;
         left: 17.1rem;
         width: 18rem;
         height: 5rem;
-        font-size: 12px;
+        font-size: 14px;
         padding: 2rem;
     }
 
@@ -894,8 +926,8 @@
     .body--items {
         padding: 0.5rem 1rem;
         grid-template-columns: repeat(5, minmax(0, 1fr));
-        row-gap: 2rem;
-        margin-left: 3.5rem;
+        row-gap: 3rem;
+        margin-left: 2.5rem;
     }
 
     .body--item {
@@ -929,7 +961,7 @@
         width: 7.5rem;
         line-height: 1rem;
         height: 9rem;
-        overflow: hidden;
+
         font-size: 12px;
         margin-top: 1rem;
     }

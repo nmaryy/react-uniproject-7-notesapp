@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from 'react'
+import { useState, useContext, createContext, useEffect } from 'react'
 
 const AppContext = createContext()
 
@@ -8,11 +8,22 @@ export function useMode() {
 }
 
 function ContextProvider({ children }) {
-    const [appMode, setAppMode] = useState(true)
+    const [appMode, setAppMode] = useState(null)
 
     function modeHandler() {
         setAppMode(prevMode => !prevMode)
+        localStorage.setItem('mode', appMode)
     }
+
+    useEffect(() => {
+        const mode = localStorage.getItem('mode')
+        if (mode !== null) {
+            setAppMode(JSON.parse(mode))
+        } else {
+            setAppMode(true)
+        }
+    }, [])
+
 
     return (
         <AppContext.Provider value={{

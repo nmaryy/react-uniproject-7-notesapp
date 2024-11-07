@@ -12,13 +12,11 @@
 }
 
 body {
-  margin: 0;
   background-color: var(--color-primary);
-  overflow: hidden;
 }
 
 .app {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   font-size: 14px;
@@ -56,7 +54,7 @@ body .dark {
 .banner--img {
   height: 2rem;
   width: 4rem;
-  position: fixed;
+  position: absolute;
   top: 2.2rem;
   left: 1.8rem;
 }

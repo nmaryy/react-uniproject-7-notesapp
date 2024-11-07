@@ -12,6 +12,7 @@ function App() {
   let auth = true
   const { mode } = useMode()
 
+
   function editorHandler() {
     setEditShown(!editShown)
 

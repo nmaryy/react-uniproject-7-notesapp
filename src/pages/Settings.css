@@ -8,12 +8,6 @@
 
 }
 
-
-.settings .footer {
-    bottom: 0.7rem;
-}
-
-
 .settings--card {
     display: flex;
     flex-direction: column;
@@ -209,11 +203,6 @@
 
 
 @media (min-width:375px) {
-    .settings .footer {
-        bottom: 0;
-    }
-
-
     .settings--card {
         display: flex;
         flex-direction: column;
@@ -706,106 +695,7 @@
 }
 
 
-@media (min-width:1536px) {
 
-    .settings--card {
-        width: 60rem;
-        margin: 2rem auto;
-    }
-
-    .form--grids {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-        padding: 0;
-        width: 100%;
-        grid-template-rows: repeat(3, minmax(0, 1fr));
-
-    }
-
-    .form--col {
-        margin: 1rem 3.5rem;
-    }
-
-    .settings--card label {
-        margin-block: 0.5rem;
-        font-size: 10px;
-    }
-
-    .settings--card input {
-        width: 12rem;
-        padding: 1.5rem;
-        height: 1.5rem;
-        font-size: 12px;
-    }
-
-    .settings--card select {
-        width: 6rem;
-        height: 3rem;
-        padding: 0;
-        font-size: 12px;
-    }
-
-    .settings--card select:first-of-type {
-        margin-right: 1rem;
-    }
-
-    .settings--save {
-        height: 1.5rem;
-        padding: 1.5rem;
-        margin-top: 2.5rem;
-        font-size: 14px;
-        width: 10rem;
-
-    }
-
-    .settings--sub {
-        height: 1.5rem;
-        width: 14rem;
-        padding: 1.5rem;
-        font-size: 14px;
-        margin: 2rem auto;
-    }
-
-    .settings--card input[type='file'] {
-        height: 3rem;
-        padding: 1rem;
-    }
-
-    .nav--mode {
-        width: 2.4rem;
-        height: 1.4rem;
-        margin-right: 0;
-        padding: 0.1rem;
-
-    }
-
-    .nav--mode--input {
-        opacity: 0;
-        width: 2.4rem !important;
-        height: 1.2rem !important;
-        transform: translateX(-0.2rem) translateY(-0.2rem);
-    }
-
-    .nav--mode--check {
-        width: 1rem;
-        height: 1rem;
-    }
-
-
-    .move {
-        transform: translateX(1.1rem);
-        width: 1rem;
-        height: 1rem;
-    }
-
-    .move--inp {
-        transform: translateX(-1.2rem) translateY(-0.3rem);
-        width: 2.4rem !important;
-    }
-
-
-
-}
 
 @media (min-width:1280px) {
     .settings--card {
@@ -899,6 +789,111 @@
     .move--inp {
         transform: translateX(-0.8rem) translateY(-0.4rem);
         width: 1.6rem !important;
+    }
+
+
+
+}
+
+@media (min-width:1536px) {
+
+    .settings--card {
+        width: 60rem;
+        margin: 2rem auto;
+    }
+
+    .form--grids {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        padding: 0;
+        width: 100%;
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+
+    }
+
+    .form--col {
+        margin: 1rem 3.5rem;
+    }
+
+    .settings--card label {
+        margin-block: 0.5rem;
+        font-size: 14px;
+    }
+
+    .settings--card input {
+        width: 12rem;
+        padding: 1.5rem;
+        height: 1.5rem;
+        font-size: 14px;
+    }
+
+    .settings--card input::placeholder {
+        font-size: 14px;
+    }
+
+    .settings--card select {
+        width: 6rem;
+        height: 3rem;
+        padding: 0;
+        font-size: 12px;
+    }
+
+    .settings--card select:first-of-type {
+        margin-right: 1rem;
+    }
+
+    .settings--save {
+        height: 1.5rem;
+        padding: 1.5rem;
+        margin-top: 2.5rem;
+        font-size: 14px;
+        width: 10rem;
+
+    }
+
+    .settings--sub {
+        height: 1.5rem;
+        width: 14rem;
+        padding: 1.5rem;
+        font-size: 14px;
+        margin: 2rem auto;
+    }
+
+    .settings--card input[type='file'] {
+        height: 3rem;
+        padding: 1rem;
+    }
+
+    .nav--mode {
+        width: 2.4rem;
+        height: 1.4rem;
+        margin-right: 0;
+        padding: 0.1rem;
+
+    }
+
+    .nav--mode--input {
+        opacity: 0;
+        width: 2.4rem !important;
+        height: 1.2rem !important;
+        transform: translateX(-0.2rem) translateY(-0.2rem);
+    }
+
+    .nav--mode--check {
+        width: 1rem;
+        height: 1rem;
+    }
+
+
+    .move {
+        transform: translateX(1.1rem);
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .move--inp {
+        transform: translateX(-1.2rem) translateY(-0.3rem);
+        width: 2.4rem !important;
     }
 
 

@@ -56,13 +56,13 @@
 
 @media (min-width:1024px) {
     .navigation {
-        width: 40rem;
+        width: 50rem;
     }
 
     .nav--links {
-        padding: 0.5rem;
+        padding: 0 0.5rem;
         font-size: 12px;
-        margin-left: 1.2rem;
+        margin-left: 1.5rem;
     }
 }
 

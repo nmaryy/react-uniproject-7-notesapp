@@ -7,11 +7,6 @@
     font-family: "Playfair Display", serif;
 }
 
-
-.contact .footer {
-    bottom: 0.7rem;
-}
-
 .contact--desc {
     height: 24rem;
     margin: 2rem auto;
@@ -35,10 +30,6 @@
 
 
 @media (min-width:375px) {
-    .contact .footer {
-        bottom: 0;
-    }
-
     .contact--desc {
         height: 24rem;
         margin: 2rem auto;
@@ -103,19 +94,6 @@
     }
 }
 
-@media (min-width:1536px) {
-
-    .contact--desc {
-        margin: 1rem auto;
-    }
-
-    .contact--desc li {
-        padding: 1.5rem;
-        margin: 2.5rem;
-        justify-content: space-between;
-        font-size: 16px;
-    }
-}
 
 @media (min-width:1280px) {
 
@@ -125,5 +103,19 @@
         margin: 1.5rem;
         justify-content: space-between;
         font-size: 14px;
+    }
+}
+
+@media (min-width:1536px) {
+
+    .contact--desc {
+        margin: 1rem auto;
+    }
+
+    .contact--desc li {
+        padding: 1.5rem;
+        margin: 1.5rem 3rem;
+        justify-content: space-between;
+        font-size: 16px;
     }
 }

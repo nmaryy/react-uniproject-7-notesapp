@@ -9,6 +9,7 @@ import { useProfileContext } from '../assets/ProfileProvider';
 function Settings() {
     const { profile, setProfile } = useProfileContext()
     const { mode, setMode } = useMode()
+
     const [formSaved, setFormSaved] = useState(false)
     const [accountInputs, setAccountInputs] = useState(
         {
@@ -23,10 +24,6 @@ function Settings() {
     )
     const [countries, setCountries] = useState('')
 
-    function modeHandler() {
-        setMode(prevMode => !prevMode)
-    }
-
     function profileChangleHandler(event) {
         const { name, value } = event.target;
         setAccountInputs({
@@ -40,8 +37,6 @@ function Settings() {
         localStorage.setItem('profile', JSON.stringify(accountInputs));
         setFormSaved(true)
     }
-
-    console.log(profile)
 
 
     useEffect(() => {
@@ -63,7 +58,7 @@ function Settings() {
                 <label htmlFor='switch-mode' >Switch Mode</label>
                 <div className='nav--mode'>
                     <div className={!mode ? 'move' : 'nav--mode--check'}>
-                        <input id='switch-mode' className={!mode ? 'move--inp' : 'nav--mode--input '} type='checkbox' checked={mode} onChange={modeHandler} />
+                        <input id='switch-mode' className={!mode ? 'move--inp' : 'nav--mode--input '} type='checkbox' checked={mode !== null && mode} onChange={setMode} />
                     </div>
                 </div>
                 <form onSubmit={profileUploadHandler}>
@@ -113,7 +108,7 @@ function Settings() {
                     <div>
 
                         <button
-                            type='submit' className='settings--save'>{formSaved ? 'Save Edits' : 'Saved'}</button>
+                            type='submit' className='settings--save'>{formSaved ? 'Saved' : 'Save Edits'}</button>
                     </div>
                 </form >
                 <button className='settings--sub'>Buy Subscribtion</button>

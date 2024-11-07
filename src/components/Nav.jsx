@@ -8,13 +8,11 @@ const Nav = () => {
 
     const { mode } = useMode()
 
-
     return (
 
         <div className='nav'>
             <div className='header--top'>
                 <img className='banner--img' src={mode ? 'bannerlight.svg' : 'bannerdark.svg'} />
-
             </div>
             <Navigation />
 

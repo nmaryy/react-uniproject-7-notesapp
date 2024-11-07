@@ -1,4 +1,3 @@
-import Footer from './Footer'
 import UnauthHeader from './UnauthHeader'
 import { MdAdd } from "react-icons/md";
 import { MdFileDownloadDone } from "react-icons/md";
@@ -7,14 +6,14 @@ import { MdOutlineRestore } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
 import { useArray } from '../assets/ArrayProvider';
 import { useProfileContext } from '../assets/ProfileProvider';
-
-
-
+import { useMode } from '../assets/ContextProvider';
 import './Header.css'
-import { useState } from 'react';
+import { useState } from 'react'; 3
+
+
 const Header = (props) => {
     const { profile } = useProfileContext()
-
+    const { mode } = useMode()
     const [recentToggle, setRecentToggle] = useState(false)
     const [doneToggle, setDoneToggle] = useState(false)
     const [trashToggle, setTrashToggle] = useState(false)
@@ -89,10 +88,10 @@ const Header = (props) => {
                     {a.title}
                 </span>
                 <span className='header--icons'>
-                    <i className='trash--del' onClick={() => deleteNote(a.id)}>
+                    <i onClick={() => deleteNote(a.id)}>
                         <RiDeleteBin2Line />
                     </i>
-                    <i className='trash--del' onClick={() => restoreNote(a)}>
+                    <i onClick={() => restoreNote(a)}>
                         <MdOutlineRestore />
 
                     </i>
@@ -108,8 +107,8 @@ const Header = (props) => {
                 props.auth ?
                     <div className='header--middle'>
                         <div className='header--middle--acc'>
-                            <img src='avatarlight.png' />
-                            <div>{profile.firstName !== undefined ? `${profile.firstName.toUpperCase()}'s` : 'My'} Notes</div>
+                            <img src={mode ? 'avatarlight.svg' : 'avatardark.svg'} />
+                            <div>{profile.firstName !== '' ? `${profile.firstName.toUpperCase()}'s` : 'My'} Notes</div>
                         </div>
                         <div className='header--middle--add'>
                             <button className='add-btn' onClick={props.onEdit}>
@@ -162,7 +161,6 @@ const Header = (props) => {
 
                     : <UnauthHeader />
             }
-            < Footer />
         </div >
     )
 }

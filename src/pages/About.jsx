@@ -12,11 +12,9 @@ function About() {
         <div className={mode ? 'about' : 'about dark'}>
             <Nav />
             <div className='unauth'>
-
                 <UnauthHeader />
             </div>
             <Footer />
-
         </div>
     )
 }

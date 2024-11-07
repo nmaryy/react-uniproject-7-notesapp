@@ -14,8 +14,6 @@ const Body = (props) => {
     const { mode } = useMode()
     const { notes } = useArray()
     const { profile } = useProfileContext()
-
-
     const [navInput, setNavInput] = useState('')
     const [resultElement, setResultElement] = useState([])
     const foundCondition = (navInput !== '' && resultElement.length > 0)
@@ -98,7 +96,7 @@ const Body = (props) => {
 
 
                     <div className='body--nav'>
-                        <h4>{profile.firstName !== undefined ? `${profile.firstName.toUpperCase()}'s` : 'My'} Notes</h4>
+                        <h4>{profile.firstName !== '' ? `${profile.firstName.toUpperCase()}'s` : 'My'} Notes</h4>
                         <i>{`>`}</i>
                         <p>All Notes</p>
                     </div>
@@ -123,7 +121,6 @@ const Body = (props) => {
                             </div>
                         )}
                     </div>
-
                 </div>
             }
         </div>
